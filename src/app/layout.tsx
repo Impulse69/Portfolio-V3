@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     default: "Isaac Asamoah Junior | Creative Developer",
     template: "%s | Isaac Asamoah Junior"
   },
-  description: "Portfolio of Isaac Asamoah Junior - A Creative Developer bridging design and engineering to build immersive digital experiences.",
-  keywords: ["Isaac Asamoah Junior", "Isaac Asamoah", "Creative Developer", "Web Design", "Next.js", "React", "Three.js", "Frontend Engineer", "Portfolio"],
+  description: "Isaac Asamoah Junior (IKE) is a Creative Developer from Ghana specializing in Next.js, React, TypeScript, and modern web technologies. Building immersive digital experiences that bridge design and engineering.",
+  keywords: ["Isaac Asamoah Junior", "Isaac Asamoah Junior Developer", "Isaac Asamoah Junior Ghana", "Isaac Asamoah Jr", "IKE developer", "Creative Developer Ghana", "Impulse69", "Web Developer Ghana", "Next.js Developer", "React Developer", "Full-Stack Developer Ghana", "Portfolio"],
   authors: [{ name: "Isaac Asamoah Junior" }],
   creator: "Isaac Asamoah Junior",
   openGraph: {
