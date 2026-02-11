@@ -1,30 +1,12 @@
-import { MetadataRoute } from 'next'
+import { Metadata, Viewport } from 'next';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-    return [
-        {
-            url: 'https://isaac.dev',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 1,
-        },
-        {
-            url: 'https://isaac.dev/#work',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://isaac.dev/#about',
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 0.5,
-        },
-        {
-            url: 'https://isaac.dev/#contact',
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 0.5,
-        },
-    ]
+const baseUrl = 'https://isaacasamoahjunior.com';
+
+export default function sitemap() {
+    const routes = ['', '/#work', '/#about', '/#contact'].map((route) => ({
+        url: `${baseUrl}${route}`,
+        lastModified: new Date().toISOString().split('T')[0],
+    }));
+
+    return [...routes];
 }

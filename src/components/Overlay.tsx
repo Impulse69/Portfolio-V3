@@ -43,16 +43,19 @@ export default function Overlay() {
 
                     {/* Main name - high contrast white with shadow */}
                     <motion.h1
-                        className="text-7xl md:text-9xl font-bold tracking-tighter mb-6 relative"
+                        className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 relative flex flex-col items-center"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, ease: "easeOut" }}
                         style={{
-                            textShadow: '0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9), 0 0 60px rgba(99,102,241,0.5)'
+                            textShadow: '0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9), 0 0 60px rgba(217,119,6,0.4)'
                         }}
                     >
                         <span className="text-white drop-shadow-2xl">
                             ISAAC
+                        </span>
+                        <span className="text-white drop-shadow-2xl text-4xl md:text-6xl mt-2 tracking-normal bg-gradient-to-r from-amber-200 to-orange-200 bg-clip-text text-transparent">
+                            ASAMOAH JUNIOR
                         </span>
                     </motion.h1>
 
@@ -68,7 +71,7 @@ export default function Overlay() {
                                 className="text-xl md:text-2xl font-medium tracking-wide"
                                 style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}
                             >
-                                <span className="text-indigo-300">Creative</span>{' '}
+                                <span className="text-amber-300">Creative</span>{' '}
                                 <span className="text-white">Developer</span>
                             </p>
                         </div>
@@ -101,10 +104,10 @@ export default function Overlay() {
                     className="max-w-2xl relative z-10"
                 >
                     {/* Accent line */}
-                    <div className="absolute -left-8 top-0 w-1 h-full bg-gradient-to-b from-indigo-500 via-cyan-500 to-transparent rounded-full shadow-lg shadow-indigo-500/50" />
+                    <div className="absolute -left-8 top-0 w-1 h-full bg-gradient-to-b from-amber-500 via-orange-500 to-transparent rounded-full shadow-lg shadow-amber-500/50" />
 
                     <span
-                        className="text-indigo-300 text-sm font-medium uppercase tracking-widest mb-4 block"
+                        className="text-amber-300 text-sm font-medium uppercase tracking-widest mb-4 block"
                         style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}
                     >
                         What I Do
@@ -115,7 +118,7 @@ export default function Overlay() {
                         style={{ textShadow: '0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}
                     >
                         I build{' '}
-                        <span className="text-indigo-300">
+                        <span className="text-amber-300">
                             digital experiences
                         </span>
                         .
@@ -142,10 +145,10 @@ export default function Overlay() {
                     className="max-w-2xl text-right relative z-10"
                 >
                     {/* Accent line */}
-                    <div className="absolute -right-8 top-0 w-1 h-full bg-gradient-to-b from-cyan-500 via-rose-500 to-transparent rounded-full shadow-lg shadow-cyan-500/50" />
+                    <div className="absolute -right-8 top-0 w-1 h-full bg-gradient-to-b from-orange-500 via-amber-500 to-transparent rounded-full shadow-lg shadow-orange-500/50" />
 
                     <span
-                        className="text-cyan-300 text-sm font-medium uppercase tracking-widest mb-4 block"
+                        className="text-amber-300 text-sm font-medium uppercase tracking-widest mb-4 block"
                         style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}
                     >
                         My Approach
@@ -156,7 +159,7 @@ export default function Overlay() {
                         style={{ textShadow: '0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}
                     >
                         Bridging{' '}
-                        <span className="text-cyan-300">
+                        <span className="text-amber-300">
                             design & engineering
                         </span>
                         .

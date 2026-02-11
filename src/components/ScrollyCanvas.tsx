@@ -2,18 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
-import styles from './frames.json'; // Importing JSON list of frames
-
-// If JSON import fails in TS, we might need a declaration or just use require, 
-// but Next.js usually handles it. 
-// We expect styles to be an array of strings like "frame_000.png"
-const frames = styles as string[];
+import frames from './frames.json';
 
 export default function ScrollyCanvas() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const imagesRef = useRef<HTMLImageElement[]>([]);
+  const frameIndexRef = useRef(0);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -24,7 +20,7 @@ export default function ScrollyCanvas() {
   useEffect(() => {
     let loadedCount = 0;
     const totalFrames = frames.length;
-    
+
     // Initialize array
     imagesRef.current = new Array(totalFrames);
 
@@ -41,27 +37,49 @@ export default function ScrollyCanvas() {
     });
   }, []);
 
-  // Rental Loop / Scroll Listener
+  // Handle Resize
+  useEffect(() => {
+    const handleResize = () => {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+
+      const ctx = canvas.getContext('2d');
+      if (ctx) ctx.scale(dpr, dpr);
+
+      // Re-render current frame after resize
+      if (imagesLoaded) {
+        renderFrame(frameIndexRef.current);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial size
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [imagesLoaded]);
+
   const renderFrame = (index: number) => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext('2d');
     const img = imagesRef.current[index];
 
     if (canvas && ctx && img) {
-      // Handle resizing / object-fit cover logic
-      // Ideally we set canvas size to window size
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const w = window.innerWidth;
+      const h = window.innerHeight;
 
-      const w = canvas.width;
-      const h = canvas.height;
-      
-      // Draw image to cover
+      // Clear canvas
+      ctx.clearRect(0, 0, w, h);
+
+      // Calculate cover dimensions
       const imgRatio = img.width / img.height;
       const canvasRatio = w / h;
-      
+
       let drawW, drawH, offsetX, offsetY;
-      
+
       if (canvasRatio > imgRatio) {
         drawW = w;
         drawH = w / imgRatio;
@@ -73,22 +91,24 @@ export default function ScrollyCanvas() {
         offsetX = (w - drawW) / 2;
         offsetY = 0;
       }
-      
-      ctx.clearRect(0, 0, w, h);
+
       ctx.drawImage(img, offsetX, offsetY, drawW, drawH);
     }
   };
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (!imagesLoaded) return;
-    
-    // Map 0-1 to 0-(frames.length - 1)
+
     const frameIndex = Math.min(
       frames.length - 1,
       Math.floor(latest * frames.length)
     );
-    
-    requestAnimationFrame(() => renderFrame(frameIndex));
+
+    // Only render if frame changed to avoid redundant draws
+    if (frameIndex !== frameIndexRef.current) {
+      frameIndexRef.current = frameIndex;
+      requestAnimationFrame(() => renderFrame(frameIndex));
+    }
   });
 
   // Initial render when loaded
@@ -96,20 +116,24 @@ export default function ScrollyCanvas() {
     if (imagesLoaded) {
       renderFrame(0);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [imagesLoaded]);
 
   return (
     <div ref={containerRef} className="relative h-[500vh] bg-neutral-900">
       <div className="sticky top-0 h-screen w-full overflow-hidden">
-        <canvas 
-          ref={canvasRef} 
+        <canvas
+          ref={canvasRef}
           className="block h-full w-full object-cover"
+          style={{ width: '100vw', height: '100vh' }}
         />
         {!imagesLoaded && (
-            <div className="absolute inset-0 flex items-center justify-center text-white/50">
-                Loading Sequence...
+          <div className="absolute inset-0 flex items-center justify-center bg-black z-20">
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-12 h-12 border-4 border-amber-500 border-t-transparent rounded-full animate-spin" />
+              <span className="text-white/70 font-medium tracking-wide">Loading Experience...</span>
             </div>
+          </div>
         )}
       </div>
     </div>

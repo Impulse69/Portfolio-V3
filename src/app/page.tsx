@@ -1,6 +1,7 @@
 import ScrollyCanvas from "@/components/ScrollyCanvas";
 import Overlay from "@/components/Overlay";
 import Projects from "@/components/Projects";
+import About from "@/components/About";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -8,17 +9,17 @@ export default function Home() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Isaac',
-    url: 'https://isaac.dev',
+    name: 'Isaac Asamoah Junior',
+    url: 'https://isaacasamoahjunior.com',
     jobTitle: 'Creative Developer',
-    image: 'https://isaac.dev/og-image.jpg',
+    image: 'https://isaacasamoahjunior.com/og-image.jpg',
     sameAs: [
-      'https://github.com',
-      'https://twitter.com',
-      'https://linkedin.com',
+      'https://github.com/isaacasamoahjunior',
+      'https://twitter.com/isaac_asamoah_jr',
+      'https://linkedin.com/in/isaacasamoahjunior',
     ],
     knowsAbout: ['Web Design', 'Next.js', 'React', 'Three.js', 'WebGL', 'Creative Development'],
-    description: "Creative developer bridging design and engineering to build immersive digital experiences."
+    description: "Isaac Asamoah Junior is a Creative Developer bridging design and engineering to build immersive digital experiences."
   }
 
   return (
@@ -41,6 +42,9 @@ export default function Home() {
       <div id="work">
         <Projects />
       </div>
+
+      {/* About Section */}
+      <About />
 
       {/* Footer */}
       <Footer />

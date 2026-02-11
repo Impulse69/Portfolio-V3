@@ -8,9 +8,9 @@
   /* Color Palette */
   --color-background: #0a0a0f;
   --color-foreground: #ffffff;
-  --color-primary: #6366f1;
-  --color-secondary: #06b6d4;
-  --color-accent: #f43f5e;
+  --color-primary: #d97706;
+  --color-secondary: #f59e0b;
+  --color-accent: #c2410c;
 
   /* Font Families */
   --font-sans: var(--font-inter), system-ui, sans-serif;
@@ -23,7 +23,7 @@
 }
 
 @utility gradient-text {
-  background: linear-gradient(135deg, #6366f1 0%, #06b6d4 50%, #f43f5e 100%);
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -36,15 +36,15 @@
 }
 
 @utility glow-sm {
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.15);
 }
 
 @utility glow-md {
-  box-shadow: 0 0 40px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 40px rgba(217, 119, 6, 0.2);
 }
 
 @utility glow-lg {
-  box-shadow: 0 0 60px rgba(99, 102, 241, 0.25);
+  box-shadow: 0 0 60px rgba(217, 119, 6, 0.25);
 }
 
 /* ========================================
@@ -55,9 +55,9 @@
   --background: #0a0a0f;
   --foreground: #ffffff;
   --muted: #71717a;
-  --primary: #6366f1;
-  --secondary: #06b6d4;
-  --accent: #f43f5e;
+  --primary: #d97706;
+  --secondary: #f59e0b;
+  --accent: #c2410c;
 }
 
 * {
@@ -82,9 +82,9 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(6, 182, 212, 0.1), transparent),
-    radial-gradient(ellipse 40% 30% at 0% 80%, rgba(244, 63, 94, 0.08), transparent);
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(217, 119, 6, 0.1), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(245, 158, 11, 0.08), transparent),
+    radial-gradient(ellipse 40% 30% at 0% 80%, rgba(194, 65, 12, 0.06), transparent);
   pointer-events: none;
   z-index: -1;
 }
@@ -110,7 +110,7 @@ h6 {
    ======================================== */
 
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
+  background: rgba(217, 119, 6, 0.3);
   color: #ffffff;
 }
 

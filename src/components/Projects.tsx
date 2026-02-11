@@ -1,131 +1,168 @@
 'use client';
 
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import Image from 'next/image';
 
 const projects = [
     {
-        title: "Neon Drifter",
-        category: "WebGL Experiment",
-        gradient: "from-violet-500 via-purple-500 to-fuchsia-500",
-        description: "Real-time 3D racing experience built with Three.js"
+        title: "Custom Portfolio Builder",
+        category: "SaaS Platform",
+        description: "No-code portfolio builder with drag-and-drop, live preview, and Supabase integration",
+        image: "/projects/portfolio-builder-v2.png",
+        link: "https://v0-custom-portfolio-builder-ivory.vercel.app/",
+        tech: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Supabase"],
+        accent: "#8b5cf6",
     },
     {
-        title: "Zenith Bank",
-        category: "Fintech App",
-        gradient: "from-blue-500 via-cyan-500 to-teal-500",
-        description: "Next-gen digital banking platform"
+        title: "Presscraft & Logistics",
+        category: "Business Website",
+        description: "Modern, responsive website for a premium printing and logistics company in Ghana",
+        image: "/projects/presscraft-v2.png",
+        link: "https://presscraft.vercel.app/",
+        tech: ["HTML5", "Tailwind CSS", "JavaScript"],
+        accent: "#06b6d4",
     },
     {
-        title: "Aether Lens",
-        category: "Photography Portfolio",
-        gradient: "from-amber-500 via-orange-500 to-red-500",
-        description: "Award-winning photographer showcase"
+        title: "ExpenseTracker",
+        category: "Android App",
+        description: "Material Design Android app for tracking daily expenses with category insights and spending analytics",
+        image: "/projects/expense-tracker-v2.png",
+        link: "https://github.com/Impulse69/ExpenseTracker",
+        tech: ["Kotlin", "Android", "Material Design", "Room DB"],
+        accent: "#10b981",
     },
     {
-        title: "Null Space",
-        category: "VR Experience",
-        gradient: "from-emerald-500 via-green-500 to-lime-500",
-        description: "Immersive virtual reality art installation"
+        title: "UniHostel Booking",
+        category: "Full-Stack Web App",
+        description: "University hostel booking platform for students to find accommodation and managers to update hostel statuses",
+        image: "/projects/hostel-booking-v2.png",
+        link: "https://hostelfrontend.vercel.app/",
+        tech: ["React", "Next.js", "Vercel", "REST API"],
+        accent: "#f59e0b",
     }
 ];
 
 function ProjectCard({ project, index }: { project: typeof projects[0], index: number }) {
-    const cardRef = useRef<HTMLDivElement>(null);
-
-    const x = useMotionValue(0);
-    const y = useMotionValue(0);
-
-    const mouseXSpring = useSpring(x, { stiffness: 150, damping: 15 });
-    const mouseYSpring = useSpring(y, { stiffness: 150, damping: 15 });
-
-    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["12deg", "-12deg"]);
-    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-12deg", "12deg"]);
-
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!cardRef.current) return;
-
-        const rect = cardRef.current.getBoundingClientRect();
-        const width = rect.width;
-        const height = rect.height;
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
-
-        x.set((mouseX / width) - 0.5);
-        y.set((mouseY / height) - 0.5);
-    };
-
-    const handleMouseLeave = () => {
-        x.set(0);
-        y.set(0);
-    };
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
         <motion.div
-            ref={cardRef}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-100px" }}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{
-                rotateX,
-                rotateY,
-                transformStyle: "preserve-3d",
-            }}
-            className="group relative cursor-pointer perspective-1000"
+            transition={{ duration: 0.7, delay: index * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
+            viewport={{ once: true, margin: "-80px" }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="group"
         >
-            {/* Animated border gradient */}
-            <div className={`absolute -inset-[1px] rounded-2xl bg-gradient-to-r ${project.gradient} opacity-0 blur-sm transition-opacity duration-500 group-hover:opacity-60`} />
+            <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative rounded-2xl overflow-hidden bg-zinc-900/60 border border-white/[0.06] transition-all duration-500 hover:border-white/[0.12] hover:bg-zinc-900/80"
+                style={{
+                    boxShadow: isHovered
+                        ? `0 20px 60px -15px ${project.accent}20, 0 0 0 1px ${project.accent}15`
+                        : '0 4px 24px -4px rgba(0,0,0,0.3)',
+                    transition: 'box-shadow 0.5s ease, border-color 0.5s ease, background-color 0.5s ease',
+                }}
+            >
+                {/* Image Container */}
+                <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-800/50">
+                    {/* Gradient overlay on image */}
+                    <div className="absolute inset-0 z-10 bg-gradient-to-t from-zinc-900/90 via-zinc-900/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
 
-            {/* Card */}
-            <div className="relative h-[420px] w-full overflow-hidden rounded-2xl bg-zinc-900/80 border border-white/5 backdrop-blur-xl transition-all duration-500 group-hover:border-white/10">
+                    {/* Project Number - top right of image */}
+                    <div className="absolute top-4 right-5 z-20">
+                        <span
+                            className="text-5xl font-bold transition-all duration-500"
+                            style={{
+                                color: isHovered ? `${project.accent}30` : 'rgba(255,255,255,0.06)',
+                                WebkitTextStroke: isHovered ? `1px ${project.accent}50` : '1px rgba(255,255,255,0.08)',
+                            }}
+                        >
+                            {String(index + 1).padStart(2, '0')}
+                        </span>
+                    </div>
 
-                {/* Project number */}
-                <div className="absolute top-6 right-6 z-10">
-                    <span className="text-7xl font-bold text-white/5 group-hover:text-white/10 transition-colors duration-500">
-                        {String(index + 1).padStart(2, '0')}
-                    </span>
-                </div>
-
-                {/* Gradient background blob */}
-                <div className={`absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-gradient-to-br ${project.gradient} opacity-10 blur-3xl transition-all duration-700 group-hover:opacity-30 group-hover:scale-110`} />
-
-                {/* Floating accent shapes */}
-                <div className="absolute top-1/3 right-1/4 w-24 h-24 border border-white/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ transform: "translateZ(40px)" }} />
-                <div className="absolute bottom-1/3 left-1/4 w-16 h-16 border border-white/5 rounded-lg rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ transform: "translateZ(30px)" }} />
-
-                {/* Content */}
-                <div className="absolute inset-0 p-8 flex flex-col justify-end" style={{ transform: "translateZ(50px)" }}>
-                    {/* Category pill */}
-                    <div className="mb-4 translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                        <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r ${project.gradient} text-white`}>
+                    {/* Category pill - top left of image */}
+                    <div className="absolute top-4 left-5 z-20">
+                        <span
+                            className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider backdrop-blur-md transition-all duration-500"
+                            style={{
+                                background: isHovered ? `${project.accent}20` : 'rgba(255,255,255,0.06)',
+                                color: isHovered ? project.accent : 'rgba(255,255,255,0.5)',
+                                border: `1px solid ${isHovered ? `${project.accent}30` : 'rgba(255,255,255,0.08)'}`,
+                            }}
+                        >
                             {project.category}
                         </span>
                     </div>
 
+                    {/* Image */}
+                    <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                </div>
+
+                {/* Content Area */}
+                <div className="relative p-6 pb-7">
                     {/* Title */}
-                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-3 translate-y-4 transition-transform duration-500 group-hover:translate-y-0">
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-white">
                         {project.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-zinc-400 text-base translate-y-4 opacity-0 transition-all duration-500 delay-75 group-hover:translate-y-0 group-hover:opacity-100">
+                    <p className="text-sm text-zinc-400 leading-relaxed mb-5 line-clamp-2 group-hover:text-zinc-300 transition-colors duration-300">
                         {project.description}
                     </p>
 
-                    {/* View project link */}
-                    <div className="mt-6 translate-y-4 opacity-0 transition-all duration-500 delay-100 group-hover:translate-y-0 group-hover:opacity-100">
-                        <span className="inline-flex items-center gap-2 text-sm font-medium text-white/70 hover:text-white transition-colors">
-                            View Project
-                            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    {/* Bottom row: Tech + Arrow */}
+                    <div className="flex items-end justify-between gap-4">
+                        {/* Tech Stack */}
+                        <div className="flex flex-wrap gap-1.5">
+                            {project.tech.slice(0, 4).map((tech, i) => (
+                                <span
+                                    key={i}
+                                    className="px-2.5 py-1 text-[11px] font-medium rounded-md transition-all duration-300"
+                                    style={{
+                                        background: isHovered ? `${project.accent}10` : 'rgba(255,255,255,0.04)',
+                                        color: isHovered ? `${project.accent}` : 'rgba(255,255,255,0.4)',
+                                        border: `1px solid ${isHovered ? `${project.accent}20` : 'rgba(255,255,255,0.06)'}`,
+                                    }}
+                                >
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
+
+                        {/* Arrow Icon */}
+                        <div
+                            className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500"
+                            style={{
+                                background: isHovered ? `${project.accent}15` : 'rgba(255,255,255,0.04)',
+                                border: `1px solid ${isHovered ? `${project.accent}30` : 'rgba(255,255,255,0.06)'}`,
+                            }}
+                        >
+                            <svg
+                                className="w-4 h-4 transition-all duration-300"
+                                style={{
+                                    color: isHovered ? project.accent : 'rgba(255,255,255,0.3)',
+                                    transform: isHovered ? 'translate(2px, -2px)' : 'translate(0, 0)',
+                                }}
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
                             </svg>
-                        </span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </motion.div>
     );
 }
@@ -133,16 +170,16 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
 export default function Projects() {
     return (
         <section className="relative z-20 min-h-screen py-32 px-6 md:px-12 overflow-hidden">
-            {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-900/50 to-zinc-900" />
+            {/* Background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/80 to-zinc-950" />
 
-            {/* Decorative grid */}
-            <div className="absolute inset-0 opacity-[0.02]" style={{
-                backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-                backgroundSize: '60px 60px'
+            {/* Subtle grid texture */}
+            <div className="absolute inset-0 opacity-[0.015]" style={{
+                backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0)`,
+                backgroundSize: '40px 40px'
             }} />
 
-            <div className="relative max-w-7xl mx-auto">
+            <div className="relative max-w-6xl mx-auto">
                 {/* Section header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -151,22 +188,22 @@ export default function Projects() {
                     viewport={{ once: true }}
                     className="text-center mb-20"
                 >
-                    <span className="text-indigo-400 text-sm font-medium uppercase tracking-widest mb-4 block">
+                    <span className="text-amber-500 text-xs font-semibold uppercase tracking-[0.2em] mb-5 block">
                         Portfolio
                     </span>
-                    <h2 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
                         Selected{' '}
-                        <span className="bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
                             Works
                         </span>
                     </h2>
-                    <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
+                    <p className="text-zinc-500 text-base max-w-lg mx-auto leading-relaxed">
                         A curated collection of projects showcasing creativity, technical excellence, and attention to detail.
                     </p>
                 </motion.div>
 
                 {/* Projects grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                     {projects.map((project, i) => (
                         <ProjectCard key={i} project={project} index={i} />
                     ))}
