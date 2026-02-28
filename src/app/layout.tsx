@@ -47,6 +47,9 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
     creator: "@isaac_asamoah_jr",
   },
+  verification: {
+    google: '2N60QpO_mdyVfLPK_gzGQ27roei64b0oBpk9_1M0NQ8',
+  },
   robots: {
     index: true,
     follow: true,
