@@ -43,7 +43,7 @@ export default function Overlay() {
 
                     {/* Main name - high contrast white with shadow */}
                     <motion.h1
-                        className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 relative flex flex-col items-center"
+                        className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-6 relative flex flex-col items-center"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, ease: "easeOut" }}
@@ -54,7 +54,7 @@ export default function Overlay() {
                         <span className="text-white drop-shadow-2xl">
                             ISAAC
                         </span>
-                        <span className="text-white drop-shadow-2xl text-4xl md:text-6xl mt-2 tracking-normal bg-gradient-to-r from-amber-200 to-orange-200 bg-clip-text text-transparent">
+                        <span className="text-white drop-shadow-2xl text-2xl sm:text-4xl md:text-6xl mt-2 tracking-normal bg-gradient-to-r from-amber-200 to-orange-200 bg-clip-text text-transparent">
                             ASAMOAH JUNIOR
                         </span>
                     </motion.h1>
@@ -66,9 +66,9 @@ export default function Overlay() {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="relative"
                     >
-                        <div className="inline-block px-6 py-3 rounded-full bg-black/50 backdrop-blur-md border border-white/10">
+                        <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-black/50 backdrop-blur-md border border-white/10">
                             <p
-                                className="text-xl md:text-2xl font-medium tracking-wide"
+                                className="text-base sm:text-xl md:text-2xl font-medium tracking-wide"
                                 style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}
                             >
                                 <span className="text-amber-300">Creative</span>{' '}
@@ -95,16 +95,16 @@ export default function Overlay() {
             </div>
 
             {/* Section 2 - Statement Left */}
-            <div className="absolute top-[150vh] left-0 w-full h-screen flex items-center justify-start px-8 md:px-24">
+            <div className="absolute top-[150vh] left-0 w-full h-screen flex items-center justify-start px-6 md:px-24">
                 {/* Dark backdrop */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent pointer-events-none" />
 
                 <motion.div
                     style={{ y: y2, opacity: o2, x: x2 }}
-                    className="max-w-2xl relative z-10"
+                    className="max-w-xs sm:max-w-lg md:max-w-2xl relative z-10"
                 >
                     {/* Accent line */}
-                    <div className="absolute -left-8 top-0 w-1 h-full bg-gradient-to-b from-amber-500 via-orange-500 to-transparent rounded-full shadow-lg shadow-amber-500/50" />
+                    <div className="absolute -left-4 md:-left-8 top-0 w-1 h-full bg-gradient-to-b from-amber-500 via-orange-500 to-transparent rounded-full shadow-lg shadow-amber-500/50" />
 
                     <span
                         className="text-amber-300 text-sm font-medium uppercase tracking-widest mb-4 block"
@@ -114,7 +114,7 @@ export default function Overlay() {
                     </span>
 
                     <h2
-                        className="text-5xl md:text-7xl font-bold text-white mb-8 leading-[1.1]"
+                        className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-[1.1]"
                         style={{ textShadow: '0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}
                     >
                         I build{' '}
@@ -125,7 +125,7 @@ export default function Overlay() {
                     </h2>
 
                     <p
-                        className="text-xl text-white/80 leading-relaxed max-w-xl"
+                        className="text-base sm:text-xl text-white/80 leading-relaxed"
                         style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}
                     >
                         Merging technical precision with artistic vision to create
@@ -136,16 +136,16 @@ export default function Overlay() {
             </div>
 
             {/* Section 3 - Statement Right */}
-            <div className="absolute top-[350vh] left-0 w-full h-screen flex items-center justify-end px-8 md:px-24">
+            <div className="absolute top-[350vh] left-0 w-full h-screen flex items-center justify-end px-6 md:px-24">
                 {/* Dark backdrop */}
                 <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/40 to-transparent pointer-events-none" />
 
                 <motion.div
                     style={{ y: y3, opacity: o3, x: x3 }}
-                    className="max-w-2xl text-right relative z-10"
+                    className="max-w-xs sm:max-w-lg md:max-w-2xl text-right relative z-10"
                 >
                     {/* Accent line */}
-                    <div className="absolute -right-8 top-0 w-1 h-full bg-gradient-to-b from-orange-500 via-amber-500 to-transparent rounded-full shadow-lg shadow-orange-500/50" />
+                    <div className="absolute -right-4 md:-right-8 top-0 w-1 h-full bg-gradient-to-b from-orange-500 via-amber-500 to-transparent rounded-full shadow-lg shadow-orange-500/50" />
 
                     <span
                         className="text-amber-300 text-sm font-medium uppercase tracking-widest mb-4 block"
@@ -155,18 +155,18 @@ export default function Overlay() {
                     </span>
 
                     <h2
-                        className="text-5xl md:text-7xl font-bold text-white mb-8 leading-[1.1]"
+                        className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-[1.1]"
                         style={{ textShadow: '0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9)' }}
                     >
                         Bridging{' '}
                         <span className="text-amber-300">
-                            design & engineering
+                            design &amp; engineering
                         </span>
                         .
                     </h2>
 
                     <p
-                        className="text-xl text-white/80 leading-relaxed max-w-xl ml-auto"
+                        className="text-base sm:text-xl text-white/80 leading-relaxed ml-auto"
                         style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}
                     >
                         From high-performance canvas animations to robust full-stack architectures,

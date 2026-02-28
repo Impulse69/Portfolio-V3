@@ -88,6 +88,7 @@ export default function Navigation() {
                         {navLinks.map((link, i) => (
                             <motion.button
                                 key={link.label}
+                                type="button"
                                 onClick={() => handleNavClick(link.href)}
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -118,6 +119,7 @@ export default function Navigation() {
 
                     {/* CTA Button */}
                     <motion.button
+                        type="button"
                         onClick={() => handleNavClick('#contact')}
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -144,12 +146,14 @@ export default function Navigation() {
 
                     {/* Mobile Menu Button */}
                     <motion.button
+                        type="button"
                         onClick={() => setMobileOpen(!mobileOpen)}
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                         className="lg:hidden relative w-11 h-11 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer group"
                         aria-label="Toggle menu"
+                        aria-expanded={mobileOpen}
                     >
                         <div className="w-5 flex flex-col gap-[5px]">
                             <motion.span
@@ -199,6 +203,7 @@ export default function Navigation() {
                                     {navLinks.map((link, i) => (
                                         <motion.button
                                             key={link.label}
+                                            type="button"
                                             onClick={() => handleNavClick(link.href)}
                                             initial={{ opacity: 0, x: -20 }}
                                             animate={{ opacity: 1, x: 0 }}
@@ -216,6 +221,7 @@ export default function Navigation() {
 
                                     {/* Mobile CTA */}
                                     <motion.button
+                                        type="button"
                                         onClick={() => handleNavClick('#contact')}
                                         initial={{ opacity: 0, x: -20 }}
                                         animate={{ opacity: 1, x: 0 }}

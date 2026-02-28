@@ -60,6 +60,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                title={`View ${project.title}`}
                 className="block relative rounded-2xl overflow-hidden bg-zinc-900/60 border border-white/[0.06] transition-all duration-500 hover:border-white/[0.12] hover:bg-zinc-900/80"
                 style={{
                     boxShadow: isHovered
@@ -76,7 +77,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
                     {/* Project Number - top right of image */}
                     <div className="absolute top-4 right-5 z-20">
                         <span
-                            className="text-5xl font-bold transition-all duration-500"
+                            className="text-3xl sm:text-5xl font-bold transition-all duration-500"
                             style={{
                                 color: isHovered ? `${project.accent}30` : 'rgba(255,255,255,0.06)',
                                 WebkitTextStroke: isHovered ? `1px ${project.accent}50` : '1px rgba(255,255,255,0.08)',
@@ -105,7 +106,9 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
                         src={project.image}
                         alt={project.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                        quality={85}
+                        priority={index === 0}
                         className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                 </div>

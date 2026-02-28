@@ -1,0 +1,15 @@
+[00:00:08.541] Server  LOG     
+[00:00:08.545] Server  LOG       We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+[00:00:08.592] Server  LOG       The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+[00:00:08.606] Server  LOG       	- include was updated to add 'dist/types/**/*.ts'
+[00:00:08.615] Server  LOG       	- include was updated to add 'dist/dev/types/**/*.ts'
+[00:00:08.627] Server  LOG     
+[00:00:11.525] Server  LOG     ✓ Ready in 9s
+[00:00:14.974] Server  LOG     ○ Compiling / ...
+[00:00:36.604] Server  WARN    ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:01:02.427] Server  LOG     ✓ Finished writing to filesystem cache in 26.6s
+[00:01:27.599] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:34.296] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:04:37.290] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:37.778] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
