@@ -4,7 +4,11 @@ import { useEffect, useRef, useState } from 'react';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
 import frames from './frames.json';
 
-export default function ScrollyCanvas() {
+interface ScrollyCanvasProps {
+  onProgress?: (progress: number) => void;
+}
+
+export default function ScrollyCanvas({ onProgress }: ScrollyCanvasProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [imagesLoaded, setImagesLoaded] = useState(false);
@@ -21,7 +25,6 @@ export default function ScrollyCanvas() {
     let loadedCount = 0;
     const totalFrames = frames.length;
 
-    // Initialize array
     imagesRef.current = new Array(totalFrames);
 
     frames.forEach((frame, index) => {
@@ -29,12 +32,21 @@ export default function ScrollyCanvas() {
       img.src = `/sequence/${frame}`;
       img.onload = () => {
         loadedCount++;
+        const currentProgress = (loadedCount / totalFrames) * 100;
+        onProgress?.(currentProgress);
+        
         if (loadedCount === totalFrames) {
           setImagesLoaded(true);
         }
       };
+      // For frames that might already be cached or fail
+      img.onerror = () => {
+        loadedCount++;
+        onProgress?.((loadedCount / totalFrames) * 100);
+      };
       imagesRef.current[index] = img;
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Handle Resize
@@ -50,14 +62,13 @@ export default function ScrollyCanvas() {
       const ctx = canvas.getContext('2d');
       if (ctx) ctx.scale(dpr, dpr);
 
-      // Re-render current frame after resize
       if (imagesLoaded) {
         renderFrame(frameIndexRef.current);
       }
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize(); // Initial size
+    handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
   }, [imagesLoaded]);
@@ -71,10 +82,8 @@ export default function ScrollyCanvas() {
       const w = window.innerWidth;
       const h = window.innerHeight;
 
-      // Clear canvas
       ctx.clearRect(0, 0, w, h);
 
-      // Calculate cover dimensions
       const imgRatio = img.width / img.height;
       const canvasRatio = w / h;
 
@@ -104,14 +113,12 @@ export default function ScrollyCanvas() {
       Math.floor(latest * frames.length)
     );
 
-    // Only render if frame changed to avoid redundant draws
     if (frameIndex !== frameIndexRef.current) {
       frameIndexRef.current = frameIndex;
       requestAnimationFrame(() => renderFrame(frameIndex));
     }
   });
 
-  // Initial render when loaded
   useEffect(() => {
     if (imagesLoaded) {
       renderFrame(0);
@@ -127,14 +134,6 @@ export default function ScrollyCanvas() {
           className="block h-full w-full object-cover"
           style={{ width: '100vw', height: '100vh' }}
         />
-        {!imagesLoaded && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black z-20">
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-12 h-12 border-4 border-amber-500 border-t-transparent rounded-full animate-spin" />
-              <span className="text-white/70 font-medium tracking-wide">Loading Experience...</span>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

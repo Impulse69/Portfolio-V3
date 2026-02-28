@@ -1,12 +1,38 @@
+'use client';
+
+import { useState, useEffect } from "react";
 import ScrollyCanvas from "@/components/ScrollyCanvas";
 import Overlay from "@/components/Overlay";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Loader from "@/components/Loader";
 
 export default function Home() {
-  // Person schema — tells Google who you are
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Lock scroll when loading
+  useEffect(() => {
+    if (!isLoaded) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isLoaded]);
+
+  const handleProgress = (progress: number) => {
+    setLoadingProgress(progress);
+    if (progress >= 100) {
+      // Small delay for smooth exit of loader
+      setTimeout(() => setIsLoaded(true), 1000);
+    }
+  };
+
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -53,7 +79,6 @@ export default function Home() {
     description: 'Isaac Asamoah Junior is a Creative Developer from Ghana who bridges design and engineering to build immersive digital experiences. Specializing in Next.js, React, TypeScript, and modern web technologies.',
   }
 
-  // WebSite schema — helps with sitelinks search box
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -63,7 +88,6 @@ export default function Home() {
     description: 'Portfolio of Isaac Asamoah Junior — a Creative Developer from Ghana building immersive digital experiences.',
   }
 
-  // ProfilePage schema — tells Google this is an authoritative profile page
   const profileSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProfilePage',
@@ -73,7 +97,9 @@ export default function Home() {
   }
 
   return (
-    <main className="relative bg-[#0a0a0f]">
+    <main className={`relative bg-[#0a0a0f] transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <Loader progress={loadingProgress} isLoaded={isLoaded} />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
@@ -87,24 +113,19 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profileSchema) }}
       />
 
-      {/* Navigation */}
       <Navigation />
 
-      {/* Hero Scroll Container */}
       <div className="relative">
         <Overlay />
-        <ScrollyCanvas />
+        <ScrollyCanvas onProgress={handleProgress} />
       </div>
 
-      {/* Projects Section */}
       <div id="work">
         <Projects />
       </div>
 
-      {/* About Section */}
       <About />
 
-      {/* Footer */}
       <Footer />
     </main>
   );
