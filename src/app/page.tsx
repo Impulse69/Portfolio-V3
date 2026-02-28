@@ -10,12 +10,12 @@ export default function Home() {
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    '@id': 'https://isaacasamoahjunior.com/#person',
+    '@id': 'https://asamoahisaac.netlify.app/#person',
     name: 'Isaac Asamoah Junior',
     alternateName: ['Isaac Asamoah Jr', 'IKE', 'Impulse69'],
-    url: 'https://isaacasamoahjunior.com',
+    url: 'https://asamoahisaac.netlify.app',
     jobTitle: 'Creative Developer',
-    image: 'https://isaacasamoahjunior.com/og-image.jpg',
+    image: 'https://asamoahisaac.netlify.app/og-image.jpg',
     nationality: {
       '@type': 'Country',
       name: 'Ghana',
@@ -58,8 +58,8 @@ export default function Home() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Isaac Asamoah Junior — Creative Developer',
-    url: 'https://isaacasamoahjunior.com',
-    author: { '@id': 'https://isaacasamoahjunior.com/#person' },
+    url: 'https://asamoahisaac.netlify.app',
+    author: { '@id': 'https://asamoahisaac.netlify.app/#person' },
     description: 'Portfolio of Isaac Asamoah Junior — a Creative Developer from Ghana building immersive digital experiences.',
   }
 
@@ -67,7 +67,7 @@ export default function Home() {
   const profileSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProfilePage',
-    mainEntity: { '@id': 'https://isaacasamoahjunior.com/#person' },
+    mainEntity: { '@id': 'https://asamoahisaac.netlify.app/#person' },
     dateCreated: '2026-01-20',
     dateModified: '2026-02-11',
   }

@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://isaacasamoahjunior.com'),
+  metadataBase: new URL('https://asamoahisaac.netlify.app'),
   title: {
     default: "Isaac Asamoah Junior | Creative Developer",
     template: "%s | Isaac Asamoah Junior"
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://isaacasamoahjunior.com",
+    url: "https://asamoahisaac.netlify.app",
     title: "Isaac Asamoah Junior | Creative Developer",
     description: "Building immersive digital experiences with cutting-edge technology.",
     siteName: "Isaac Asamoah Junior Portfolio",
