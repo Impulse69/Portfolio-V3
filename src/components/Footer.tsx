@@ -83,21 +83,19 @@ export default function Footer() {
     };
 
     const inputClasses = (field: string) =>
-        `w-full bg-white/[0.04] border ${focused === field
-            ? 'border-amber-500/50 ring-1 ring-amber-500/20'
-            : 'border-white/[0.08] hover:border-white/[0.15]'
-        } rounded-xl px-5 py-3.5 text-white text-base placeholder:text-zinc-500 outline-none transition-all duration-300`;
+        `w-full bg-[#f0ece4]/[0.03] border ${focused === field
+            ? 'border-[#c8956c]/50 ring-1 ring-[#c8956c]/20'
+            : 'border-[#f0ece4]/[0.06] hover:border-[#f0ece4]/[0.12]'
+        } rounded-xl px-5 py-3.5 text-[#f0ece4] text-base placeholder:text-[#7a756d] outline-none transition-all duration-300`;
 
     return (
         <footer id="contact" className="relative z-20 overflow-hidden">
-            {/* Contact Section */}
-            <section className="relative py-24 md:py-32 px-6 md:px-12">
-                {/* Background effects */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-500/5 to-amber-500/10" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-amber-500/10 to-orange-500/10 blur-3xl" />
+            <section className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#c8956c]/[0.03] to-[#c8956c]/[0.06]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#c8956c]/[0.06] to-[#a0522d]/[0.06] blur-3xl" />
 
                 <div className="relative max-w-6xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-20 items-start">
 
                         {/* Left — CTA Text */}
                         <motion.div
@@ -106,46 +104,46 @@ export default function Footer() {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <span className="text-amber-400 text-sm font-medium uppercase tracking-widest mb-4 block">
+                            <span className="text-[#c8956c] text-sm font-medium uppercase tracking-[0.2em] mb-4 block">
                                 Get In Touch
                             </span>
 
-                            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 leading-[1.1]">
+                            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-[#f0ece4] mb-6 leading-[1.1] font-[family-name:var(--font-display)]">
                                 Let&apos;s create{' '}
-                                <span className="bg-gradient-to-r from-amber-300 via-orange-300 to-yellow-200 bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-[#e8b98a] via-[#c8956c] to-[#a0522d] bg-clip-text text-transparent italic">
                                     something amazing
                                 </span>
                                 .
                             </h2>
 
-                            <p className="text-lg text-zinc-400 leading-relaxed mb-10 max-w-md">
+                            <p className="text-base sm:text-lg text-[#7a756d] leading-relaxed mb-8 sm:mb-10 max-w-md">
                                 Have a project in mind? I&apos;d love to hear about it. Fill out the form and I&apos;ll get back to you within 24 hours.
                             </p>
 
                             {/* Contact info cards */}
-                            <div className="space-y-4">
-                                <div className="flex items-center gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-                                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center shrink-0">
-                                        <svg className="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <div className="space-y-3 sm:space-y-4">
+                                <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-[#f0ece4]/[0.02] border border-[#f0ece4]/[0.05]">
+                                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#c8956c]/20 to-[#a0522d]/20 flex items-center justify-center shrink-0">
+                                        <svg className="w-5 h-5 text-[#c8956c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                                         </svg>
                                     </div>
                                     <div>
-                                        <p className="text-sm text-zinc-400">Email</p>
-                                        <p className="text-white font-medium">juniorike69@gmail.com</p>
+                                        <p className="text-sm text-[#7a756d]">Email</p>
+                                        <p className="text-[#f0ece4] font-medium">juniorike69@gmail.com</p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-center gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-                                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center shrink-0">
-                                        <svg className="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-[#f0ece4]/[0.02] border border-[#f0ece4]/[0.05]">
+                                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#c8956c]/20 to-[#a0522d]/20 flex items-center justify-center shrink-0">
+                                        <svg className="w-5 h-5 text-[#c8956c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                                         </svg>
                                     </div>
                                     <div>
-                                        <p className="text-sm text-zinc-400">Location</p>
-                                        <p className="text-white font-medium">Ghana, West Africa</p>
+                                        <p className="text-sm text-[#7a756d]">Location</p>
+                                        <p className="text-[#f0ece4] font-medium">Ghana, West Africa</p>
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +158,7 @@ export default function Footer() {
                                         rel="noopener noreferrer"
                                         whileHover={{ y: -3, scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-amber-500/30 hover:bg-amber-500/10 flex items-center justify-center text-zinc-400 hover:text-amber-400 transition-all duration-300"
+                                        className="w-11 h-11 rounded-xl bg-[#f0ece4]/[0.03] border border-[#f0ece4]/[0.06] hover:border-[#c8956c]/30 hover:bg-[#c8956c]/10 flex items-center justify-center text-[#7a756d] hover:text-[#c8956c] transition-all duration-300"
                                         aria-label={link.label}
                                     >
                                         {link.icon}
@@ -179,16 +177,14 @@ export default function Footer() {
                             <form
                                 ref={formRef}
                                 onSubmit={handleSubmit}
-                                className="relative p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] backdrop-blur-sm"
+                                className="relative p-5 sm:p-8 rounded-2xl bg-[#f0ece4]/[0.015] border border-[#f0ece4]/[0.05] backdrop-blur-sm"
                             >
-                                {/* Subtle glow accent */}
-                                <div className="absolute -top-px left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
+                                <div className="absolute -top-px left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-[#c8956c]/40 to-transparent" />
 
-                                <h3 className="text-xl font-semibold text-white mb-6">
+                                <h3 className="text-xl font-semibold text-[#f0ece4] mb-6 font-[family-name:var(--font-display)]">
                                     Send me a message
                                 </h3>
 
-                                {/* Honeypot anti-spam field — must stay hidden */}
                                 <input
                                     type="checkbox"
                                     name="botcheck"
@@ -197,9 +193,8 @@ export default function Footer() {
                                 />
 
                                 <div className="space-y-5">
-                                    {/* Name */}
                                     <div>
-                                        <label htmlFor="name" className="block text-sm text-zinc-400 mb-2 font-medium">
+                                        <label htmlFor="name" className="block text-sm text-[#7a756d] mb-2 font-medium">
                                             Your Name
                                         </label>
                                         <input
@@ -216,9 +211,8 @@ export default function Footer() {
                                         />
                                     </div>
 
-                                    {/* Email */}
                                     <div>
-                                        <label htmlFor="email" className="block text-sm text-zinc-400 mb-2 font-medium">
+                                        <label htmlFor="email" className="block text-sm text-[#7a756d] mb-2 font-medium">
                                             Your Email
                                         </label>
                                         <input
@@ -235,16 +229,15 @@ export default function Footer() {
                                         />
                                     </div>
 
-                                    {/* Message */}
                                     <div>
-                                        <label htmlFor="message" className="block text-sm text-zinc-400 mb-2 font-medium">
+                                        <label htmlFor="message" className="block text-sm text-[#7a756d] mb-2 font-medium">
                                             Your Message
                                         </label>
                                         <textarea
                                             id="message"
                                             name="message"
                                             required
-                                            rows={5}
+                                            rows={4}
                                             placeholder="Tell me about your project..."
                                             value={formData.message}
                                             onChange={handleChange}
@@ -254,21 +247,20 @@ export default function Footer() {
                                         />
                                     </div>
 
-                                    {/* Submit button */}
                                     <motion.button
                                         type="submit"
                                         disabled={status === 'sending'}
                                         whileHover={{ scale: status === 'sending' ? 1 : 1.02 }}
                                         whileTap={{ scale: status === 'sending' ? 1 : 0.98 }}
                                         className={`w-full relative group flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-[15px] overflow-hidden transition-all duration-300 cursor-pointer ${status === 'sending'
-                                            ? 'bg-zinc-800 text-zinc-400 cursor-not-allowed'
-                                            : 'text-white'
+                                            ? 'bg-[#1a1a1f] text-[#7a756d] cursor-not-allowed'
+                                            : 'text-[#f0ece4]'
                                             }`}
                                     >
                                         {status !== 'sending' && (
                                             <>
-                                                <div className="absolute inset-0 bg-gradient-to-r from-amber-600 via-orange-500 to-amber-600 bg-[length:200%_auto] animate-gradient" />
-                                                <div className="absolute inset-0 bg-gradient-to-r from-amber-600 via-orange-500 to-amber-600 blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
+                                                <div className="absolute inset-0 bg-gradient-to-r from-[#a0522d] via-[#c8956c] to-[#a0522d] bg-[length:200%_auto] animate-gradient" />
+                                                <div className="absolute inset-0 bg-gradient-to-r from-[#a0522d] via-[#c8956c] to-[#a0522d] blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
                                             </>
                                         )}
 
@@ -277,7 +269,7 @@ export default function Footer() {
                                         </span>
 
                                         {status === 'sending' ? (
-                                            <div className="relative z-10 w-5 h-5 border-2 border-zinc-600 border-t-zinc-300 rounded-full animate-spin" />
+                                            <div className="relative z-10 w-5 h-5 border-2 border-[#3a3a3f] border-t-[#7a756d] rounded-full animate-spin" />
                                         ) : (
                                             <svg className="relative z-10 w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
@@ -286,7 +278,6 @@ export default function Footer() {
                                     </motion.button>
                                 </div>
 
-                                {/* Status Messages */}
                                 <AnimatePresence>
                                     {status === 'success' && (
                                         <motion.div
@@ -327,18 +318,16 @@ export default function Footer() {
             </section>
 
             {/* Footer bottom */}
-            <div className="relative border-t border-white/5 py-8 px-6 md:px-12">
+            <div className="relative border-t border-[#f0ece4]/[0.04] py-6 sm:py-8 px-4 sm:px-6 md:px-12">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-                    {/* Copyright */}
-                    <p className="text-zinc-500 text-sm">
+                    <p className="text-[#7a756d] text-sm">
                         © 2026 Isaac. Crafted with precision.
                     </p>
 
-                    {/* Back to top */}
                     <motion.button
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                         whileHover={{ y: -2 }}
-                        className="text-zinc-500 hover:text-white text-sm transition-colors duration-300 flex items-center gap-2 cursor-pointer"
+                        className="text-[#7a756d] hover:text-[#f0ece4] text-sm transition-colors duration-300 flex items-center gap-2 cursor-pointer"
                     >
                         Back to top
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
