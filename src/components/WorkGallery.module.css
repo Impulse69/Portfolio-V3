@@ -1,0 +1,665 @@
+.gallery {
+  width: 100%;
+  color: #252922;
+}
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+.card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.artwork {
+  aspect-ratio: 1 / 1.14;
+  min-height: 375px;
+  position: relative;
+  overflow: hidden;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  transition: filter 0.35s;
+}
+.card:hover .artwork {
+  filter: brightness(1.045);
+}
+.artTop,
+.artBottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+.artTop span:last-child {
+  text-align: right;
+}
+.artBottom {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid currentColor;
+}
+.odg {
+  background: #a64f34;
+  color: #ffeed7;
+}
+.odgWordmark {
+  font-size: clamp(54px, 6.4vw, 94px);
+  letter-spacing: -0.09em;
+  font-weight: 500;
+  line-height: 1;
+  margin-top: 32px;
+  display: flex;
+  align-items: baseline;
+  gap: 11px;
+}
+.odgWordmark span {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+}
+.odgStatement {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(28px, 3.2vw, 45px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin: 19px 0 28px;
+}
+.workflow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  margin-bottom: 24px;
+}
+.workflow span {
+  border-bottom: 1px solid #ffeed780;
+  padding-bottom: 5px;
+}
+.nonna {
+  background: #4c563c;
+  color: #f3f0dc;
+}
+.nonnaMark {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 0 0;
+}
+.nonnaMark > span {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(90px, 9vw, 135px);
+  line-height: 1;
+  font-style: italic;
+}
+.sunMark {
+  width: 56px;
+  height: 56px;
+  border: 1px solid #d2c89c;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 9px;
+}
+.sunMark::after {
+  content: "";
+  position: absolute;
+  width: 74px;
+  height: 1px;
+  background: #d2c89c;
+  left: -10px;
+  top: 50%;
+}
+.nonnaStatement {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(26px, 2.8vw, 39px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.nonnaStatement i {
+  color: #d7d2ad;
+  font-weight: 400;
+}
+.nonnaWorkflow {
+  display: flex;
+  gap: 0;
+  margin: 25px 0 22px;
+  font-size: 9px;
+}
+.nonnaWorkflow span {
+  flex: 1;
+  border-top: 1px solid #f3f0dc80;
+  padding-top: 9px;
+}
+.nonnaWorkflow span::before {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 5px;
+  background: #e0d7ab;
+  border-radius: 50%;
+  margin-top: -12px;
+  margin-bottom: 8px;
+}
+.freden {
+  background: #e7dcc7;
+  color: #514731;
+}
+.fredenMotif {
+  position: absolute;
+  width: 148px;
+  height: 148px;
+  left: 50%;
+  top: 51px;
+  transform: translateX(-50%);
+}
+.fredenMotif div {
+  position: absolute;
+  border: 1px solid #a79775;
+  border-radius: 70px 70px 0 0;
+}
+.fredenMotif div:nth-child(1) {
+  inset: 0;
+}
+.fredenMotif div:nth-child(2) {
+  inset: 12px;
+}
+.fredenMotif div:nth-child(3) {
+  inset: 24px;
+}
+.fredenMotif div:nth-child(4) {
+  inset: 36px;
+}
+.fredenWordmark {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(35px, 3.8vw, 56px);
+  letter-spacing: 0.015em;
+  line-height: 0.9;
+  text-align: center;
+  position: relative;
+  margin-top: 167px;
+}
+.fredenWordmark span {
+  display: block;
+  font-family: var(--font-body), sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.4em;
+  margin: 10px 0 0 4px;
+}
+.fredenStatement {
+  font-size: 10px;
+  text-align: center;
+  line-height: 1.6;
+  margin: 21px 0 21px;
+}
+.cardBody {
+  padding: 23px 0 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.category {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  text-transform: uppercase;
+  font-size: 9px;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  color: #72766d;
+  margin: 0 0 10px;
+}
+.category span {
+  color: #4c563c;
+}
+.cardBody h3 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin: 0 0 10px;
+}
+.summary {
+  color: #72766d;
+  font-size: 13px;
+  line-height: 1.75;
+  margin: 0 0 23px;
+  max-width: 320px;
+}
+.explore {
+  margin-top: auto;
+  padding: 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #25292228;
+  background: none;
+  color: #252922;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+.caseStudyLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  margin: 0 0 18px;
+  color: #4c563c;
+  font-size: 12px;
+  text-underline-offset: 5px;
+}
+.caseStudyLink:focus-visible {
+  outline: 2px solid #4c563c;
+  outline-offset: 5px;
+}
+.plus {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border: 1px solid #25292228;
+  border-radius: 50%;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.explore:hover .plus {
+  background: #4c563c;
+  color: #f5f3ed;
+  border-color: #4c563c;
+}
+.explore:focus-visible,
+.exploration:focus-visible,
+.close:focus-visible,
+.projectLink a:focus-visible {
+  outline: 2px solid #4c563c;
+  outline-offset: 5px;
+}
+.more {
+  margin-top: 57px;
+  padding-top: 27px;
+  border-top: 1px solid #25292228;
+}
+.moreHeading {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.moreHeading h3 {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0;
+}
+.moreHeading p {
+  font-size: 11px;
+  color: #72766d;
+  margin: 0 0 0 auto;
+}
+.explorations {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+.exploration {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  color: #252922;
+  text-decoration: none;
+  padding: 17px 0;
+  border-top: 1px solid #25292220;
+}
+.exploration span {
+  font-size: 9px;
+  color: #72766d;
+}
+.exploration h4 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 4px 0 0;
+}
+.exploration > svg {
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.exploration:hover > svg {
+  transform: translate(2px, -2px);
+}
+.dialog {
+  padding: 0;
+  border: 0;
+  background: #f5f3ed;
+  color: #252922;
+  width: min(760px, calc(100vw - 32px));
+  max-width: 760px;
+  max-height: calc(100dvh - 48px);
+  overflow: auto;
+  margin: auto;
+  box-shadow: 0 20px 100px #00000024;
+  font-family: var(--font-body), sans-serif;
+}
+.dialog::backdrop {
+  background: #252922b0;
+  backdrop-filter: blur(5px);
+}
+.dialogContent {
+  position: relative;
+  padding: 56px;
+}
+.close {
+  position: absolute;
+  top: 21px;
+  right: 21px;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  color: #252922;
+  border: 1px solid #25292228;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+.close:hover {
+  background: #e7e8df;
+}
+.dialogEyebrow {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #72766d;
+  padding-right: 28px;
+  margin: 0 0 18px;
+  line-height: 1.8;
+}
+.dialogContent h2 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(44px, 7vw, 68px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  margin: 0 0 18px;
+}
+.dialogSummary {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #72766d;
+  max-width: 510px;
+  margin: 0 0 27px;
+}
+.role {
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  border-block: 1px solid #25292224;
+  font-size: 11px;
+}
+.role span {
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #72766d;
+  font-size: 9px;
+  flex-shrink: 0;
+  line-height: 1.8;
+}
+.role p {
+  margin: 0;
+  text-align: right;
+}
+.caseSections {
+  display: grid;
+  gap: 27px;
+  padding: 29px 0 0;
+}
+.caseSections h3 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 27px;
+  font-weight: 500;
+  margin: 0 0 9px;
+}
+.caseSections p,
+.outcomes {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #72766d;
+  margin: 0;
+}
+.technologies {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 0;
+  margin: 0;
+}
+.technologies li {
+  border: 1px solid #25292226;
+  border-radius: 2px;
+  padding: 6px 10px;
+  font-size: 10px;
+  color: #4c563c;
+}
+.outcomes {
+  padding-left: 18px;
+}
+.outcomes li + li {
+  margin-top: 6px;
+}
+.outcomes li::marker {
+  color: #4c563c;
+}
+.context {
+  color: #72766d;
+  font-size: 11px;
+  line-height: 1.8;
+  border-top: 1px solid #25292224;
+  padding-top: 21px;
+  margin: 27px 0 0;
+}
+.projectLink {
+  padding-top: 20px;
+}
+.projectLink a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #4c563c;
+  text-decoration: none;
+  font-size: 12px;
+  border-bottom: 1px solid #4c563c;
+  padding-bottom: 5px;
+}
+.projectLink p {
+  font-size: 10px;
+  color: #72766d;
+  margin: 8px 0 0;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (min-width: 1450px) {
+  .odgWordmark {
+    font-size: 94px;
+  }
+  .odgStatement {
+    font-size: 45px;
+  }
+  .nonnaMark > span {
+    font-size: 135px;
+  }
+  .nonnaStatement {
+    font-size: 39px;
+  }
+  .fredenWordmark {
+    font-size: 56px;
+  }
+}
+@media (max-width: 1050px) and (min-width: 761px) {
+  .projects {
+    gap: 20px;
+  }
+  .artwork {
+    padding: 20px;
+    aspect-ratio: 1 / 1.45;
+  }
+  .artTop,
+  .artBottom {
+    font-size: 8px;
+  }
+  .workflow {
+    gap: 5px;
+    font-size: 8px;
+  }
+  .fredenMotif {
+    width: 120px;
+    height: 140px;
+  }
+  .fredenWordmark {
+    margin-top: 171px;
+    font-size: 34px;
+  }
+  .nonnaWorkflow {
+    font-size: 8px;
+  }
+  .cardBody h3 {
+    font-size: 31px;
+  }
+  .explorations {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 33px;
+  }
+  .artwork {
+    aspect-ratio: auto;
+    min-height: 370px;
+    padding: 28px;
+  }
+  .artTop,
+  .artBottom {
+    font-size: 10px;
+  }
+  .odgWordmark {
+    font-size: 92px;
+    margin-top: 27px;
+  }
+  .odgStatement {
+    font-size: 43px;
+    margin-top: 17px;
+  }
+  .workflow {
+    font-size: 11px;
+    gap: 12px;
+  }
+  .nonnaMark > span {
+    font-size: 124px;
+  }
+  .nonnaStatement {
+    font-size: 40px;
+  }
+  .nonnaWorkflow {
+    font-size: 10px;
+  }
+  .fredenMotif {
+    width: 140px;
+    height: 145px;
+    top: 52px;
+  }
+  .fredenWordmark {
+    font-size: 55px;
+    margin-top: 160px;
+  }
+  .fredenStatement {
+    font-size: 11px;
+  }
+  .cardBody {
+    padding-top: 20px;
+  }
+  .cardBody h3 {
+    font-size: 36px;
+  }
+  .summary {
+    max-width: 390px;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+  .category {
+    font-size: 10px;
+  }
+  .explore {
+    font-size: 12px;
+  }
+  .more {
+    margin-top: 42px;
+  }
+  .moreHeading {
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+  .moreHeading p {
+    flex-basis: 100%;
+    margin-left: 32px;
+  }
+  .explorations {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 22px;
+  }
+  .dialogContent {
+    padding: 62px 27px 32px;
+  }
+  .dialogSummary {
+    font-size: 14px;
+  }
+  .role {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .role p {
+    text-align: left;
+  }
+}
+@media (max-width: 380px) {
+  .artwork {
+    padding: 23px;
+  }
+  .artTop {
+    font-size: 9px;
+  }
+  .workflow {
+    gap: 7px;
+    font-size: 10px;
+  }
+  .explorations {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .artwork,
+  .plus,
+  .exploration > svg {
+    transition: none;
+  }
+}

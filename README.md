@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Isaac Asamoah — Founder portfolio
 
-## Getting Started
+An editorial portfolio for the founder and CEO of IJW Labs. Built with Next.js 16, React 19, TypeScript and Tailwind CSS 4, using ivory, olive and rust, DM Sans and Cormorant Garamond, portrait photography and two-dimensional CSS motion. No WebGL runtime or loading gate.
 
-First, run the development server:
+## Local review
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```powershell
+npm.cmd install
+npm.cmd run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. For a local production preview:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```powershell
+npm.cmd run build
+npm.cmd run start -- --port 3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Validation
 
-## Learn More
+```powershell
+npm.cmd run lint
+npx.cmd tsc --noEmit
+npm.cmd run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Content and interactions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/app/page.tsx`: founder introduction, company, biography, approach and contact.
+- `src/lib/profile.ts`: identity and linked Person/Organization structured data.
+- `src/lib/projects.ts`: commercial project stories and other explorations.
+- `src/components/WorkGallery.tsx`: native case-study dialogs with keyboard focus management.
+- `src/components/Navigation.tsx`: section navigation and responsive mobile menu.
+- `src/components/ContactActions.tsx`: direct email, copy-email interaction and company enquiry link.
+- `src/app/opengraph-image.tsx`: generated social preview artwork.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contact uses email links and the existing IJW Labs contact page. No new third-party form service or test message submission.
 
-## Deploy on Vercel
+## Sources
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Founder title and company description were checked against https://ijwlabs.com/ and https://ijwlabs.com/founders/isaac-asamoah/. The hero portrait is a local copy of IJW Labs' public founder portrait (`/images/founder-isaac-20260930.jpg`), retrieved October 1, 2026. The secondary portrait is the existing portfolio image.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ODG and Freden case studies use previously supplied professional project facts. Nonna Lodge's hospitality management case study was corrected against the current application under `C:/Users/User/Hotel-gig/app`: package manifest, Electron entry point, registered server routes, database initialization/schema, and printing implementation. Its stack is Electron, React, TypeScript, Tailwind CSS, Node.js, Fastify, SQLite and Drizzle ORM. The source app is internally branded IJW Stay. Older Python files and rental-product notes do not describe this implementation.
+
+Editorial project identities and system overview artwork are designed illustrations, not product screenshots. Nonna's public website is separate from its hospitality management application. The public Freden design concept is separate from its commercial production engagement.
+
+## Release boundary
+
+Isaac approved production publication on October 1, 2026. The production site is https://asamoahisaac.netlify.app, connected through Netlify to the `Portfolio-V3` branch. Run lint and the production build before pushing. Verify the published deploy matches the pushed commit and check the live homepage, case studies, sitemap, robots and social image.
+
+Search metadata and linked Person, Organization, WebSite and ProfilePage structured data describe Isaac Asamoah as Founder & CEO of IJW Labs. Three server-rendered case studies provide crawlable project evidence; visible questions and answers clarify identity, services and contact. Search results and AI Overviews depend on subsequent recrawling; their wording or timing cannot be guaranteed.
