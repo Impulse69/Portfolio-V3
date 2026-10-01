@@ -41,9 +41,7 @@ function ProjectPreview({ project }: { project: PortfolioProject }) {
         className={styles.previewImage}
         quality={85}
       />
-      {preview.concept ? (
-        <span className={styles.concept}>Interface concept</span>
-      ) : (
+      {!preview.concept && (
         <span className={styles.hotelIdentity} aria-hidden="true">
           <span>Eastern Premier</span>
           <small>Website concept</small>

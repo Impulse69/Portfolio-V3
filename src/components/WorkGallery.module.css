@@ -32,18 +32,6 @@
   outline: 2px solid #4c563c;
   outline-offset: 5px;
 }
-.concept {
-  position: absolute;
-  left: 16px;
-  bottom: 16px;
-  padding: 6px 9px;
-  border-radius: 4px;
-  background: #f5f3ede8;
-  color: #414a34;
-  font-size: 9px;
-  letter-spacing: 0.04em;
-  line-height: 1.4;
-}
 .hotelIdentity {
   position: absolute;
   inset: 0;

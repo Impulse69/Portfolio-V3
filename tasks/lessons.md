@@ -1,5 +1,7 @@
 # Project lessons
 
+- Keep generated-preview context in accessible descriptions and documentation; omit visible "Interface concept" image badges when the user requests their removal.
+
 - When the user identifies Eastern Premier as the replacement for Freden, replace the project throughout cards, case-study routes, visible answers and sitemap. Do not retain Freden based on my preference for an available image.
 
 - Selected-work cards should show image-led project previews rather than abstract typographic identity panels. Keep illustrative concepts distinct from verified product screenshots and avoid unrelated live-demo footer strips.
