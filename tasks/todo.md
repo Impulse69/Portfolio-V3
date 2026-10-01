@@ -4,6 +4,15 @@
 Rebuild the portfolio around Isaac Asamoah, Founder & CEO of IJW Labs. Use an editorial, premium visual identity: ivory paper, deep ink, olive accents, expressive serif typography, authentic portrait photography, and thoughtful two-dimensional motion. Remove the WebGL/3D experience and loading gate. Keep the existing Next.js platform and canonical URL. Production publication approved October 1, 2026, after local review.
 
 ## Plan
+### Image-led project cards
+- [x] Find authentic project preview assets; use clearly identified concepts where needed.
+- [x] Replace graphic panels with landscape image cards and restrained hover treatment.
+- [x] Verify responsive layout, image loading, case-study interactions and build.
+
+Direction: use large visual previews with softly rounded corners, no live-demo footer strip, and retain the approved project facts and crawlable links.
+
+Validation: generated ODG and Nonna interface concepts plus the existing Freden website concept terrace asset, compressed to WebP. Replaced tall artwork with 16:10 image links, concept labels and subtle hover scaling. Lint, production build/TypeScript and whitespace checks passed. Browser confirms all images load, narrow layout has no overflow, and Nonna dialog opens/closes correctly. Production release follows the user's existing publication authorization.
+
 - [x] Inspect repository, assets, professional references, and the official IJW Labs website.
 - [x] Check in with the design direction before implementation.
 - [x] Build new responsive navigation, founder introduction, work, studio, approach, and contact sections.

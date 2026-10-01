@@ -42,7 +42,9 @@ Founder title and company description were checked against https://ijwlabs.com/ 
 
 ODG and Freden case studies use previously supplied professional project facts. Nonna Lodge's hospitality management case study was corrected against the current application under `C:/Users/User/Hotel-gig/app`: package manifest, Electron entry point, registered server routes, database initialization/schema, and printing implementation. Its stack is Electron, React, TypeScript, Tailwind CSS, Node.js, Fastify, SQLite and Drizzle ORM. The source app is internally branded IJW Stay. Older Python files and rental-product notes do not describe this implementation.
 
-Editorial project identities and system overview artwork are designed illustrations, not product screenshots. Nonna's public website is separate from its hospitality management application. The public Freden design concept is separate from its commercial production engagement.
+Project card images live in `public/images/work/`. ODG and Nonna are generated interface concepts, labelled in the cards, rather than screenshots of deployed products. Freden uses the existing website concept's terrace image. Nonna's public website is separate from its hospitality management application. The public Freden design concept is separate from its commercial production engagement.
+
+Image generation used the built-in tool. Prompts requested landscape, straight-on interface concepts with no device or live-demo footer: an ivory/charcoal/rust ODG ERP overview with inventory, quotations and invoices; and an ivory/olive Nonna Lodge front desk with reservations, rooms, guest folios, restaurant and night audit. All UI records are fictional illustrative data. The generated PNGs were optimized to 1400-pixel WebP assets for the cards.
 
 ## Release boundary
 

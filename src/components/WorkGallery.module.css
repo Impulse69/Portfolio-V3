@@ -12,188 +12,58 @@
   display: flex;
   flex-direction: column;
 }
-.artwork {
-  aspect-ratio: 1 / 1.14;
-  min-height: 375px;
+.preview {
+  display: block;
   position: relative;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
-  padding: 26px;
+  border-radius: 14px;
+  background: #e7e8df;
+  isolation: isolate;
+}
+.previewImage {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+.preview:hover .previewImage {
+  transform: scale(1.035);
+}
+.preview:focus-visible {
+  outline: 2px solid #4c563c;
+  outline-offset: 5px;
+}
+.concept {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  padding: 6px 9px;
+  border-radius: 4px;
+  background: #f5f3ede8;
+  color: #414a34;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+.hotelIdentity {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
-  transition: filter 0.35s;
+  justify-content: flex-end;
+  padding: 25px;
+  color: #fff8e8;
+  background: linear-gradient(180deg, transparent 35%, #19241dc9);
 }
-.card:hover .artwork {
-  filter: brightness(1.045);
-}
-.artTop,
-.artBottom {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  font-size: 9px;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
-}
-.artTop span:last-child {
-  text-align: right;
-}
-.artBottom {
-  margin-top: auto;
-  padding-top: 18px;
-  border-top: 1px solid currentColor;
-}
-.odg {
-  background: #a64f34;
-  color: #ffeed7;
-}
-.odgWordmark {
-  font-size: clamp(54px, 6.4vw, 94px);
-  letter-spacing: -0.09em;
-  font-weight: 500;
+.hotelIdentity > span {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(34px, 4vw, 58px);
   line-height: 1;
-  margin-top: 32px;
-  display: flex;
-  align-items: baseline;
-  gap: 11px;
 }
-.odgWordmark span {
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  font-weight: 400;
-}
-.odgStatement {
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(28px, 3.2vw, 45px);
-  line-height: 0.98;
-  letter-spacing: -0.02em;
-  margin: 19px 0 28px;
-}
-.workflow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 10px;
-  margin-bottom: 24px;
-}
-.workflow span {
-  border-bottom: 1px solid #ffeed780;
-  padding-bottom: 5px;
-}
-.nonna {
-  background: #4c563c;
-  color: #f3f0dc;
-}
-.nonnaMark {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
-  padding: 17px 0 0;
-}
-.nonnaMark > span {
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(90px, 9vw, 135px);
-  line-height: 1;
-  font-style: italic;
-}
-.sunMark {
-  width: 56px;
-  height: 56px;
-  border: 1px solid #d2c89c;
-  border-radius: 50%;
-  position: relative;
-  margin-right: 9px;
-}
-.sunMark::after {
-  content: "";
-  position: absolute;
-  width: 74px;
-  height: 1px;
-  background: #d2c89c;
-  left: -10px;
-  top: 50%;
-}
-.nonnaStatement {
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(26px, 2.8vw, 39px);
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-.nonnaStatement i {
-  color: #d7d2ad;
-  font-weight: 400;
-}
-.nonnaWorkflow {
-  display: flex;
-  gap: 0;
-  margin: 25px 0 22px;
+.hotelIdentity small {
   font-size: 9px;
-}
-.nonnaWorkflow span {
-  flex: 1;
-  border-top: 1px solid #f3f0dc80;
-  padding-top: 9px;
-}
-.nonnaWorkflow span::before {
-  content: "";
-  display: block;
-  height: 5px;
-  width: 5px;
-  background: #e0d7ab;
-  border-radius: 50%;
-  margin-top: -12px;
-  margin-bottom: 8px;
-}
-.freden {
-  background: #e7dcc7;
-  color: #514731;
-}
-.fredenMotif {
-  position: absolute;
-  width: 148px;
-  height: 148px;
-  left: 50%;
-  top: 51px;
-  transform: translateX(-50%);
-}
-.fredenMotif div {
-  position: absolute;
-  border: 1px solid #a79775;
-  border-radius: 70px 70px 0 0;
-}
-.fredenMotif div:nth-child(1) {
-  inset: 0;
-}
-.fredenMotif div:nth-child(2) {
-  inset: 12px;
-}
-.fredenMotif div:nth-child(3) {
-  inset: 24px;
-}
-.fredenMotif div:nth-child(4) {
-  inset: 36px;
-}
-.fredenWordmark {
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(35px, 3.8vw, 56px);
-  letter-spacing: 0.015em;
-  line-height: 0.9;
-  text-align: center;
-  position: relative;
-  margin-top: 167px;
-}
-.fredenWordmark span {
-  display: block;
-  font-family: var(--font-body), sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.4em;
-  margin: 10px 0 0 4px;
-}
-.fredenStatement {
-  font-size: 10px;
-  text-align: center;
-  line-height: 1.6;
-  margin: 21px 0 21px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 7px;
 }
 .cardBody {
   padding: 23px 0 0;
@@ -497,49 +367,9 @@
   white-space: nowrap;
   border: 0;
 }
-@media (min-width: 1450px) {
-  .odgWordmark {
-    font-size: 94px;
-  }
-  .odgStatement {
-    font-size: 45px;
-  }
-  .nonnaMark > span {
-    font-size: 135px;
-  }
-  .nonnaStatement {
-    font-size: 39px;
-  }
-  .fredenWordmark {
-    font-size: 56px;
-  }
-}
 @media (max-width: 1050px) and (min-width: 761px) {
   .projects {
     gap: 20px;
-  }
-  .artwork {
-    padding: 20px;
-    aspect-ratio: 1 / 1.45;
-  }
-  .artTop,
-  .artBottom {
-    font-size: 8px;
-  }
-  .workflow {
-    gap: 5px;
-    font-size: 8px;
-  }
-  .fredenMotif {
-    width: 120px;
-    height: 140px;
-  }
-  .fredenWordmark {
-    margin-top: 171px;
-    font-size: 34px;
-  }
-  .nonnaWorkflow {
-    font-size: 8px;
   }
   .cardBody h3 {
     font-size: 31px;
@@ -551,49 +381,7 @@
 @media (max-width: 760px) {
   .projects {
     grid-template-columns: 1fr;
-    gap: 33px;
-  }
-  .artwork {
-    aspect-ratio: auto;
-    min-height: 370px;
-    padding: 28px;
-  }
-  .artTop,
-  .artBottom {
-    font-size: 10px;
-  }
-  .odgWordmark {
-    font-size: 92px;
-    margin-top: 27px;
-  }
-  .odgStatement {
-    font-size: 43px;
-    margin-top: 17px;
-  }
-  .workflow {
-    font-size: 11px;
-    gap: 12px;
-  }
-  .nonnaMark > span {
-    font-size: 124px;
-  }
-  .nonnaStatement {
-    font-size: 40px;
-  }
-  .nonnaWorkflow {
-    font-size: 10px;
-  }
-  .fredenMotif {
-    width: 140px;
-    height: 145px;
-    top: 52px;
-  }
-  .fredenWordmark {
-    font-size: 55px;
-    margin-top: 160px;
-  }
-  .fredenStatement {
-    font-size: 11px;
+    gap: 40px;
   }
   .cardBody {
     padding-top: 20px;
@@ -642,22 +430,12 @@
   }
 }
 @media (max-width: 380px) {
-  .artwork {
-    padding: 23px;
-  }
-  .artTop {
-    font-size: 9px;
-  }
-  .workflow {
-    gap: 7px;
-    font-size: 10px;
-  }
   .explorations {
     grid-template-columns: 1fr;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .artwork,
+  .previewImage,
   .plus,
   .exploration > svg {
     transition: none;

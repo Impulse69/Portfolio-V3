@@ -2,43 +2,54 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowDownRight, ArrowUpRight, Plus, X } from 'lucide-react';
 import { explorations, flagshipProjects, type PortfolioProject } from '@/lib/projects';
 import styles from './WorkGallery.module.css';
 
-function ProjectArtwork({ id }: { id: string }) {
-  if (id === 'odg') {
-    return (
-      <div className={`${styles.artwork} ${styles.odg}`} aria-hidden="true">
-        <div className={styles.artTop}><span>Office Data Ghana</span><span>ERP / Business systems</span></div>
-        <div className={styles.odgWordmark}>ODG<span>ERP</span></div>
-        <div className={styles.odgStatement}>The business.<br />Connected.</div>
-        <div className={styles.workflow}><span>Quotation</span><ArrowUpRight size={15} /><span>Invoice</span><ArrowUpRight size={15} /><span>Inventory</span></div>
-        <div className={styles.artBottom}><span>System overview</span><span>01 — Operations</span></div>
-      </div>
-    );
-  }
+const previews: Record<string, { src: string; alt: string; concept?: boolean }> = {
+  odg: {
+    src: '/images/work/odg-preview.webp',
+    alt: 'Illustrative interface concept for ODG ERP business operations software',
+    concept: true,
+  },
+  nonna: {
+    src: '/images/work/nonna-preview.webp',
+    alt: 'Illustrative interface concept for Nonna Lodge hospitality management software',
+    concept: true,
+  },
+  freden: {
+    src: '/images/work/freden-preview.webp',
+    alt: 'Freden Hotel website concept with terrace imagery',
+  },
+};
 
-  if (id === 'nonna') {
-    return (
-      <div className={`${styles.artwork} ${styles.nonna}`} aria-hidden="true">
-        <div className={styles.artTop}><span>Nonna Lodge</span><span>Hospitality management</span></div>
-        <div className={styles.nonnaMark}><span>N</span><div className={styles.sunMark} /></div>
-        <div className={styles.nonnaStatement}>A good stay.<br /><i>A smoother day.</i></div>
-        <div className={styles.nonnaWorkflow}><span>Rooms</span><span>Guest folios</span><span>Restaurant</span><span>Night audit</span></div>
-        <div className={styles.artBottom}><span>System overview</span><span>02 — Hospitality</span></div>
-      </div>
-    );
-  }
+function ProjectPreview({ project }: { project: PortfolioProject }) {
+  const preview = previews[project.id];
 
   return (
-    <div className={`${styles.artwork} ${styles.freden}`} aria-hidden="true">
-      <div className={styles.artTop}><span>Freden Hotel</span><span>Website & service</span></div>
-      <div className={styles.fredenMotif}><div /><div /><div /><div /></div>
-      <div className={styles.fredenWordmark}>FREDEN<span>HOTEL</span></div>
-      <div className={styles.fredenStatement}>A considered presence.<br />An ongoing partnership.</div>
-      <div className={styles.artBottom}><span>Project identity / Hospitality</span><span>03 — Digital</span></div>
-    </div>
+    <Link
+      href={`/work/${project.slug}`}
+      className={styles.preview}
+      aria-label={`Read ${project.title} case study`}
+    >
+      <Image
+        src={preview.src}
+        alt={preview.alt}
+        fill
+        sizes="(max-width: 760px) 100vw, (max-width: 1200px) 30vw, 400px"
+        className={styles.previewImage}
+        quality={85}
+      />
+      {preview.concept ? (
+        <span className={styles.concept}>Interface concept</span>
+      ) : (
+        <span className={styles.hotelIdentity} aria-hidden="true">
+          <span>Freden</span>
+          <small>Website concept</small>
+        </span>
+      )}
+    </Link>
   );
 }
 
@@ -74,7 +85,7 @@ export default function WorkGallery() {
       <div className={styles.projects}>
         {flagshipProjects.map((project) => (
           <article className={styles.card} key={project.id}>
-            <ProjectArtwork id={project.id} />
+            <ProjectPreview project={project} />
             <div className={styles.cardBody}>
               <p className={styles.category}><span>{project.number}</span>{project.category}</p>
               <h3>{project.title}</h3>
