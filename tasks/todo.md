@@ -19,12 +19,14 @@ Rebuild the portfolio around Isaac Asamoah, Founder & CEO of IJW Labs. Use an ed
 - [x] Add crawlable, server-rendered project case studies with unique metadata and internal links.
 - [x] Improve identity metadata, structured data and visible factual answers.
 - [x] Verify lint, types, production build, crawlability, routes and browser behavior.
-- [ ] Commit/push under the user's Git identity and deploy to the existing production site.
-- [ ] Verify deployed revision, live routes, metadata, sitemap, robots, images and contact.
+- [x] Commit/push under the user's Git identity and deploy to the existing production site.
+- [x] Verify deployed revision, live routes, metadata, sitemap, robots, images and contact.
 
 User explicitly authorized production publication after local design and content review. Earlier no-deploy boundary is superseded by this request.
 
 Release validation: ESLint, production build and TypeScript passed; diff whitespace check passed. All four pages contain one H1, valid JSON-LD and their canonical URLs, without public name suffixes or noindex. Homepage includes server-rendered answers and three case-study links. Sitemap lists four pages; robots permits crawling. Local case-study navigation, verified Nonna stack, layout without overflow, social image and invalid-slug 404 passed. Existing Netlify site is connected to this repository and branch. Previous published deploy: `6a6a8eb5d4354300083ed480`, commit `96199689f8d6e994d6d6c4fbe347914525f8ebcb`.
+
+Production proof: pushed release `af1bde5ffceb557396ccb38dcdfd093fafe110d4`, attributed to Isaac Asamoah through his GitHub noreply identity. Netlify deploy `6abe425f74e8bf0008bd0c7f` reached ready in production and became the site's published deploy at `https://asamoahisaac.netlify.app`. Live HTTP checks passed for all four content pages, sitemap, robots, social image, icon and founder portrait; invalid case study returns 404. Browser confirms founder identity, crawlable links, visible answers, loaded portraits, company email links and no horizontal overflow or console errors. Google guidance confirms normal SEO foundations apply to AI search; recrawling and resulting descriptions remain search-engine controlled.
 
 ### Replace highlighted explorations
 - [x] Verify two replacement projects and public links.
