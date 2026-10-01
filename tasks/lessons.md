@@ -1,5 +1,7 @@
 # Project lessons
 
+- When the user identifies Eastern Premier as the replacement for Freden, replace the project throughout cards, case-study routes, visible answers and sitemap. Do not retain Freden based on my preference for an available image.
+
 - Selected-work cards should show image-led project previews rather than abstract typographic identity panels. Keep illustrative concepts distinct from verified product screenshots and avoid unrelated live-demo footer strips.
 
 - Public identity is **Isaac Asamoah**. Do not include the personal name suffix in page copy, image alt text, SEO, structured data, social preview artwork, or public account handles. Use the shared profile as the source of truth. Use IJW Labs' public email for contact rather than an address that reveals the suffix.

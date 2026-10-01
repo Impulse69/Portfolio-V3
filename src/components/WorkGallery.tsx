@@ -18,9 +18,9 @@ const previews: Record<string, { src: string; alt: string; concept?: boolean }> 
     alt: 'Illustrative interface concept for Nonna Lodge hospitality management software',
     concept: true,
   },
-  freden: {
-    src: '/images/work/freden-preview.webp',
-    alt: 'Freden Hotel website concept with terrace imagery',
+  eastern: {
+    src: '/images/work/eastern-preview.webp',
+    alt: 'Eastern Premier Hotel website concept with aerial hotel imagery',
   },
 };
 
@@ -45,7 +45,7 @@ function ProjectPreview({ project }: { project: PortfolioProject }) {
         <span className={styles.concept}>Interface concept</span>
       ) : (
         <span className={styles.hotelIdentity} aria-hidden="true">
-          <span>Freden</span>
+          <span>Eastern Premier</span>
           <small>Website concept</small>
         </span>
       )}

@@ -4,6 +4,12 @@
 Rebuild the portfolio around Isaac Asamoah, Founder & CEO of IJW Labs. Use an editorial, premium visual identity: ivory paper, deep ink, olive accents, expressive serif typography, authentic portrait photography, and thoughtful two-dimensional motion. Remove the WebGL/3D experience and loading gate. Keep the existing Next.js platform and canonical URL. Production publication approved October 1, 2026, after local review.
 
 ## Plan
+### Eastern Premier replacement
+- [x] Verify Eastern Premier source and replace the Freden card, case study and answer text.
+- [x] Verify build, image and route; publish the replacement and confirm production.
+
+Eastern Premier source and live concept verified; replaced shared project data, preview asset/overlay, visible answers and generated route/sitemap. Stack is HTML, CSS, JavaScript and Netlify; booking form identified as a demonstration. Lint, production build/TypeScript and diff checks passed. Production publication follows the existing release authorization.
+
 ### Image-led project cards
 - [x] Find authentic project preview assets; use clearly identified concepts where needed.
 - [x] Replace graphic panels with landscape image cards and restrained hover treatment.
