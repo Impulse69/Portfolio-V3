@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396">
+  <rect width="1584" height="396" fill="#f5f3ed"/>
+  <path d="M0 0h330v396H0z" fill="#4c563c"/>
+  <circle cx="150" cy="170" r="100" fill="none" stroke="#d7d2ad" stroke-width="1" opacity=".5"/>
+  <path d="M35 170h230M150 55v230" stroke="#d7d2ad" opacity=".5"/>
+  <text x="410" y="96" fill="#a64f34" font-family="Arial,sans-serif" font-size="17" letter-spacing="4">ISAAC ASAMOAH · ACCRA, GHANA</text>
+  <text x="406" y="186" fill="#252922" font-family="Georgia,serif" font-size="72">Building what comes next.</text>
+  <text x="410" y="245" fill="#4c563c" font-family="Arial,sans-serif" font-size="27">Founder &amp; CEO of IJW Labs</text>
+  <path d="M410 280h1050" stroke="#252922" opacity=".15"/>
+  <text x="410" y="325" fill="#72766d" font-family="Arial,sans-serif" font-size="19">Web experiences. Business systems. Technology with purpose.</text>
+  <text x="1460" y="366" text-anchor="end" fill="#4c563c" font-family="Arial,sans-serif" font-size="18">ijwlabs.com</text>
+</svg>

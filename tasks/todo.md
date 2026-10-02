@@ -8,9 +8,11 @@ Rebuild the portfolio around Isaac Asamoah, Founder & CEO of IJW Labs. Use an ed
 - [x] Inspect LinkedIn and current company facts.
 - [x] Align headline, About, founder experience, portrait and website links.
 - [x] Add the verified LinkedIn URL to portfolio links and structured data.
-- [ ] Verify saved public profile and deployed website links.
+- [x] Verify saved public profile and deployed website links.
 
 LinkedIn alignment: Isaac Asamoah name already correct; saved founder-first headline, Software Development industry, grounded About section, Founder & CEO at IJW Labs from September 2026 (earliest Netlify production launch September 23, 2026 per user direction), and Portfolio/Company contact website links. Existing portrait matches portfolio. Added verified public profile to portfolio visible footer and Person sameAs, and aligned company founder source/meta/schema/link. Preserve existing education and ODG experience. No network announcement posted.
+
+Verified October 2, 2026: LinkedIn reload preserves founder headline, IJW Labs primary organization, About, founder role dates and contact website links. Uploaded and saved matching custom banner after user enabled extension local-file uploads. Both live website pages return 200 with the LinkedIn URL, founder title and no public name suffix. Portfolio release `8a61fa8`; company release from clean selected commit `ab17a30`, Netlify deploy `6abfbb0ab51e1ef0b9a31154`. Unrelated company worktree edits preserved. Profile screenshot saved locally as `tasks/linkedin-aligned.jpg`.
 
 ### Eastern Premier replacement
 - [x] Verify Eastern Premier source and replace the Freden card, case study and answer text.
