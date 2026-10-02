@@ -7,6 +7,7 @@ export const profile = {
   description: "Isaac Asamoah, Founder & CEO of IJW Labs in Accra, Ghana. Explore websites, business software and hospitality systems built for real client operations.",
   socials: {
     github: "https://github.com/Impulse69",
+    linkedin: "https://www.linkedin.com/in/isaac-asamoah-aba780440/",
   },
 } as const;
 

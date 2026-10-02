@@ -407,6 +407,9 @@ export default function Home() {
                 >
                   GitHub <ArrowUpRight size={13} aria-hidden="true" />
                 </a>
+                <a href={profile.socials.linkedin} target="_blank" rel="noopener noreferrer">
+                  LinkedIn <ArrowUpRight size={13} aria-hidden="true" />
+                </a>
                 <a
                   href="https://ijwlabs.com"
                   target="_blank"
