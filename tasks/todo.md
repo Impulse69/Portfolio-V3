@@ -86,5 +86,7 @@ Completed October 1, 2026. Local production preview: http://localhost:3000.
 
 - [x] Verify the deployed address and product description against current source.
 - [x] Add Skuldrop to the personal portfolio and IJW Labs project gallery.
-- [ ] Build both sites and verify the new links and preview.
-- [ ] Publish only the intended changes and check both live portfolios.
+- [x] Build both sites and verify the new links and preview.
+- [x] Publish only the intended changes and check both live portfolios.
+
+Review: Verified current Skuldrop source and the live D Alimachi tenant website. Added the personal portfolio link and a featured IJW Labs gallery card with a real screenshot and 480/960/1400 WebP variants. Personal lint and Next.js production build passed; company Vite build and nine-page prerender passed. Published personal commit c08ae1b (Netlify deploy 6ac66e393f38a6000886ed07) and company commit 9620343 (deploy 6ac66e5949e960c9bf1a75d5). Browser checks confirmed both live links and the loaded company image. Unrelated company VoiceWidget, webhook and task changes were excluded through a clean release worktree. Screenshots: tasks/skuldrop-personal-live.png and tasks/skuldrop-company-live.png.
