@@ -82,3 +82,9 @@ Completed October 1, 2026. Local production preview: http://localhost:3000.
 - Replaced old 3D components and removed 62 obsolete dependency packages. Unused legacy public frame assets remain on disk but are not referenced or requested by the rebuilt site. Automatic approval review blocked recursive removal of that unused directory; no further removal was attempted.
 - Review found a critical advisory in the pre-existing Next.js 16.1.4 dependency. Upgraded Next.js and matching eslint-config-next to pinned 16.3.8 and revalidated. npm audit now reports no critical issue and no flagged Next.js dependency. Nine other dependency advisories remain (one low, two moderate, six high); broad dependency remediation was outside this redesign.
 - No commit, push, deployment, external contact message, or form submission. Search and AI Overview changes require a later approved deployment and recrawl; local edits do not change the live site or guarantee search wording.
+# Skuldrop portfolio addition — October 7, 2026
+
+- [x] Verify the deployed address and product description against current source.
+- [x] Add Skuldrop to the personal portfolio and IJW Labs project gallery.
+- [ ] Build both sites and verify the new links and preview.
+- [ ] Publish only the intended changes and check both live portfolios.

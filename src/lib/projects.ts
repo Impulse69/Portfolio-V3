@@ -81,6 +81,7 @@ export const flagshipProjects: PortfolioProject[] = [
 ];
 
 export const explorations = [
+  { title: 'Skuldrop', category: 'Delivery operations & proof of delivery', href: 'https://dalimachi.com/' },
   { title: 'ScoutingReport Africa', category: 'Football scouting platform', href: 'https://scoutingreportafrica.com' },
   { title: 'Portfolio Builder', category: 'Web application', href: 'https://v0-custom-portfolio-builder-ivory.vercel.app/' },
   { title: 'ExpenseTracker', category: 'Android · source code', href: 'https://github.com/Impulse69/ExpenseTracker' },
