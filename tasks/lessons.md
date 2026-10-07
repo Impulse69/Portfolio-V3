@@ -1,5 +1,7 @@
 # Project lessons
 
+- Verify screenshot previews at the final card aspect ratio on desktop and mobile. Loading successfully does not prove that text and navigation remain visible; use contained fitting for wide interface screenshots.
+
 - Keep generated-preview context in accessible descriptions and documentation; omit visible "Interface concept" image badges when the user requests their removal.
 
 - When the user identifies Eastern Premier as the replacement for Freden, replace the project throughout cards, case-study routes, visible answers and sitemap. Do not retain Freden based on my preference for an available image.

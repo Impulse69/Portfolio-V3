@@ -1,5 +1,12 @@
 # Founder portfolio rebuild
 
+## Skuldrop preview correction — October 7, 2026
+- [x] Fit the full interface screenshot inside the company card without clipping its edges.
+- [x] Build and publish the scoped fix from clean source.
+- [x] Verify the live homepage and work gallery on desktop and mobile.
+
+Review: The 16:9 screenshot was being center-cropped in a 4:3 photo card. Added a per-project contain fit and reserved space for the link strip; full navigation and hero text are now visible. Production build and prerender passed. Published company commit 2b2d5ff as deploy 6ac6768eac3378541696e362. Verified loaded preview, contain fit and no horizontal page overflow at narrow and desktop layouts; homepage uses the same corrected component. Live proof: tasks/skuldrop-framing-fixed-live.png.
+
 ## Brief
 Rebuild the portfolio around Isaac Asamoah, Founder & CEO of IJW Labs. Use an editorial, premium visual identity: ivory paper, deep ink, olive accents, expressive serif typography, authentic portrait photography, and thoughtful two-dimensional motion. Remove the WebGL/3D experience and loading gate. Keep the existing Next.js platform and canonical URL. Production publication approved October 1, 2026, after local review.
 
