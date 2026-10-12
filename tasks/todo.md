@@ -1,5 +1,11 @@
 # Founder portfolio rebuild
 
+## Credentials section — October 12, 2026
+- [x] Inspect all eight certificates; confirm titles, dates, issuers and public-safe identity.
+- [x] Add a refined credentials section with two featured programmes and supporting course certificates.
+- [x] Add accessible certificate links and matching credential structured data.
+- [ ] Build, check desktop/mobile layout, publish and verify production.
+
 ## Skuldrop preview correction — October 7, 2026
 - [x] Fit the full interface screenshot inside the company card without clipping its edges.
 - [x] Build and publish the scoped fix from clean source.

@@ -12,6 +12,7 @@ import Navigation from "@/components/Navigation";
 import WorkGallery from "@/components/WorkGallery";
 import ContactActions from "@/components/ContactActions";
 import Answers from "@/components/Answers";
+import Credentials from "@/components/Credentials";
 import { profile, structuredData } from "@/lib/profile";
 
 const approach = [
@@ -313,6 +314,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <Credentials />
         <section
           id="approach"
           className="approach-section section shell"
@@ -320,7 +322,7 @@ export default function Home() {
         >
           <div className="approach-intro">
             <p className="eyebrow">
-              <span className="section-number">04</span> HOW I WORK
+              <span className="section-number">05</span> HOW I WORK
             </p>
             <h2 id="approach-title">
               Good work starts
@@ -365,7 +367,7 @@ export default function Home() {
           <div className="shell">
             <div className="contact-top">
               <p className="eyebrow">
-                <span className="section-number">05</span> LET’S BUILD SOMETHING
+                <span className="section-number">06</span> LET’S BUILD SOMETHING
                 WORTHWHILE
               </p>
               <span className="contact-location">

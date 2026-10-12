@@ -1,3 +1,5 @@
+import { programmes, courseCertificates, credentialFile } from './credentials';
+
 export const profile = {
   name: "Isaac Asamoah",
   title: "Founder & CEO, IJW Labs",
@@ -28,6 +30,15 @@ export const person = {
   image: siteUrl('/images/isaac-founder.jpg'),
   address: { "@type": "PostalAddress", addressLocality: "Accra", addressCountry: "GH" },
   sameAs: [...Object.values(profile.socials), companyUrl('/founders/isaac-asamoah/')],
+  hasCredential: [...programmes, ...courseCertificates].map((credential) => ({
+    '@type': 'EducationalOccupationalCredential',
+    name: credential.title,
+    credentialCategory: 'category' in credential ? credential.category : 'Course completion',
+    recognizedBy: { '@type': 'Organization', name: 'Google' },
+    dateCreated: credential.date,
+    url: siteUrl(credentialFile(credential.slug)),
+    ...('verification' in credential ? { sameAs: credential.verification } : {}),
+  })),
 };
 
 export const organization = {
@@ -67,7 +78,7 @@ export const structuredData = {
       inLanguage: "en-GH",
       mainEntity: { "@id": person["@id"] },
       isPartOf: { "@id": siteUrl('/#website') },
-      dateModified: "2026-10-01",
+      dateModified: "2026-10-12",
     },
   ],
 };

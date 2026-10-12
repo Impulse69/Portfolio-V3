@@ -8,6 +8,7 @@ const links = [
   { id: "work", label: "Selected work" },
   { id: "studio", label: "IJW Labs" },
   { id: "about", label: "About me" },
+  { id: "credentials", label: "Credentials" },
   { id: "approach", label: "Approach" },
 ];
 
