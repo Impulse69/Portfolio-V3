@@ -4,7 +4,9 @@
 - [x] Inspect all eight certificates; confirm titles, dates, issuers and public-safe identity.
 - [x] Add a refined credentials section with two featured programmes and supporting course certificates.
 - [x] Add accessible certificate links and matching credential structured data.
-- [ ] Build, check desktop/mobile layout, publish and verify production.
+- [x] Build, check desktop/mobile layout, publish and verify production.
+
+Review: Added two featured Google programme credentials and an expandable list of six course certificates, with unchanged original PDFs, readable previews and programme verification links. Checked all eight source documents for accurate titles, dates and public identity. Lint and production build passed. Desktop, tablet and mobile checks confirmed responsive cards and navigation without horizontal overflow; live previews loaded and the course disclosure exposed six entries. Production commit de3db0c published as Netlify deploy 6acd53fcb92cb9da4c1322b1. Live homepage and all eight PDFs returned 200; structured data contains eight credentials and the public name has no suffix. Preview: tasks/credentials-live.png.
 
 ## Skuldrop preview correction — October 7, 2026
 - [x] Fit the full interface screenshot inside the company card without clipping its edges.
