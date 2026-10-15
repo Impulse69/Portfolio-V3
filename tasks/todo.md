@@ -1,5 +1,12 @@
 # Founder portfolio rebuild
 
+## AWS certification feature — October 15, 2026
+- [x] Verify the official badge and supplied PDF; keep private exam identifiers off the public site.
+- [x] Add a prominent AWS certification feature with official artwork and verification.
+- [ ] Verify responsive layout, build and production release.
+
+Design: a full-width ink panel ahead of Google programmes, large official badge, editorial certification title and clear issue/expiry metadata. Use Credly directly rather than its embedded widget to retain accessible, consistent styling. The supplied PDF is an exam score report containing private candidate identifiers; do not publish it.
+
 ## Credentials section — October 12, 2026
 - [x] Inspect all eight certificates; confirm titles, dates, issuers and public-safe identity.
 - [x] Add a refined credentials section with two featured programmes and supporting course certificates.

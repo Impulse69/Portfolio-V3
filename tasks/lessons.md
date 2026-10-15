@@ -1,4 +1,5 @@
 # Project lessons
+- A preference against LinkedIn announcements does not imply subdued portfolio presentation. Give verified certifications strong visual treatment when requested; keep the LinkedIn restriction separate.
 
 - Verify screenshot previews at the final card aspect ratio on desktop and mobile. Loading successfully does not prove that text and navigation remain visible; use contained fitting for wide interface screenshots.
 

@@ -1,4 +1,4 @@
-import { programmes, courseCertificates, credentialFile } from './credentials';
+import { awsCertification, programmes, courseCertificates, credentialFile } from './credentials';
 
 export const profile = {
   name: "Isaac Asamoah",
@@ -30,7 +30,15 @@ export const person = {
   image: siteUrl('/images/isaac-founder.jpg'),
   address: { "@type": "PostalAddress", addressLocality: "Accra", addressCountry: "GH" },
   sameAs: [...Object.values(profile.socials), companyUrl('/founders/isaac-asamoah/')],
-  hasCredential: [...programmes, ...courseCertificates].map((credential) => ({
+  hasCredential: [{
+    '@type': 'EducationalOccupationalCredential',
+    name: awsCertification.title,
+    credentialCategory: 'Certification',
+    recognizedBy: { '@type': 'Organization', name: awsCertification.issuer },
+    dateCreated: awsCertification.issued,
+    expires: awsCertification.expires,
+    url: awsCertification.verification,
+  }, ...[...programmes, ...courseCertificates].map((credential) => ({
     '@type': 'EducationalOccupationalCredential',
     name: credential.title,
     credentialCategory: 'category' in credential ? credential.category : 'Course completion',
@@ -38,7 +46,7 @@ export const person = {
     dateCreated: credential.date,
     url: siteUrl(credentialFile(credential.slug)),
     ...('verification' in credential ? { sameAs: credential.verification } : {}),
-  })),
+  }))],
 };
 
 export const organization = {
@@ -78,7 +86,7 @@ export const structuredData = {
       inLanguage: "en-GH",
       mainEntity: { "@id": person["@id"] },
       isPartOf: { "@id": siteUrl('/#website') },
-      dateModified: "2026-10-12",
+      dateModified: "2026-10-15",
     },
   ],
 };

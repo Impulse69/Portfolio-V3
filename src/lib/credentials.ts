@@ -1,3 +1,11 @@
+export const awsCertification = {
+  title: 'AWS Certified Cloud Practitioner',
+  issuer: 'Amazon Web Services Training and Certification',
+  issued: '2026-10-14',
+  expires: '2029-10-14',
+  verification: 'https://www.credly.com/badges/109f7ba8-84cb-47c0-9972-58827cd9e535/public_url',
+} as const;
+
 export const programmes = [
   {
     slug: 'google-ai',

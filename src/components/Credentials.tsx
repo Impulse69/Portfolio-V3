@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { ArrowUpRight, Plus } from 'lucide-react';
-import { programmes, courseCertificates, credentialFile } from '@/lib/credentials';
+import { awsCertification, programmes, courseCertificates, credentialFile } from '@/lib/credentials';
 import styles from './Credentials.module.css';
 
 export default function Credentials() {
@@ -11,8 +11,26 @@ export default function Credentials() {
           <p className="eyebrow"><span className="section-number">04</span> CONTINUING TO LEARN</p>
           <h2 id="credentials-title">Curiosity, backed<br />by <em>practice.</em></h2>
         </div>
-        <p className="section-note">Structured learning to complement the hands-on work. AI and prompting programmes developed by Google, completed through Coursera.</p>
+        <p className="section-note">Cloud certification and applied AI learning, alongside the hands-on work. Credentials from Amazon Web Services and Google.</p>
       </div>
+      <article className={styles.aws} aria-labelledby="aws-title">
+        <div className={styles.awsArtwork}>
+          <a href={awsCertification.verification} target="_blank" rel="noopener noreferrer" aria-label="View AWS Certified Cloud Practitioner badge on Credly (opens in a new tab)">
+            <Image src="/images/credentials/aws-cloud-practitioner.png" alt="Official AWS Certified Cloud Practitioner foundational badge" width={680} height={680} sizes="(max-width: 760px) 240px, 320px" />
+          </a>
+          <span className={styles.awsLevel}>FOUNDATIONAL / AWS CERTIFICATION</span>
+        </div>
+        <div className={styles.awsCopy}>
+          <p className={styles.awsEyebrow}>AMAZON WEB SERVICES <span>·</span> CERTIFIED</p>
+          <h3 id="aws-title">AWS Certified<br /><em>Cloud Practitioner.</em></h3>
+          <p className={styles.awsDescription}>A verified foundation in the AWS Cloud: its core services, cloud concepts, security and business value.</p>
+          <dl className={styles.awsDates}>
+            <div><dt>Issued</dt><dd><time dateTime={awsCertification.issued}>14 October 2026</time></dd></div>
+            <div><dt>Valid until</dt><dd><time dateTime={awsCertification.expires}>14 October 2029</time></dd></div>
+          </dl>
+          <a className={styles.awsVerify} href={awsCertification.verification} target="_blank" rel="noopener noreferrer" aria-label="Verify AWS Certified Cloud Practitioner certification on Credly (opens in a new tab)">Verify on Credly <ArrowUpRight size={18} aria-hidden="true" /></a>
+        </div>
+      </article>
       <div className={styles.programmes}>
         {programmes.map((programme) => (
           <article key={programme.slug} className={styles.programme}>
