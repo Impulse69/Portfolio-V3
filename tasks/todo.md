@@ -3,7 +3,9 @@
 ## AWS certification feature — October 15, 2026
 - [x] Verify the official badge and supplied PDF; keep private exam identifiers off the public site.
 - [x] Add a prominent AWS certification feature with official artwork and verification.
-- [ ] Verify responsive layout, build and production release.
+- [x] Verify responsive layout, build and production release.
+
+Review: Verified official Credly recipient, issuer, issue date (14 October 2026) and expiry (14 October 2029). Added original official badge artwork, prominent dark/gold feature and direct verification links; extended Person credentials with AWS certification metadata. Kept the supplied exam-results PDF and private identifiers out of public assets. Lint, TypeScript and production build passed. Desktop and mobile layouts had no horizontal overflow, and the official badge loaded. Production commit ad07851 published as Netlify deploy 6ad0588a0c0ae8cfa3d69e7f; verified live feature and structured data. No LinkedIn activity. Screenshot: tasks/aws-certification-live.png.
 
 Design: a full-width ink panel ahead of Google programmes, large official badge, editorial certification title and clear issue/expiry metadata. Use Credly directly rather than its embedded widget to retain accessible, consistent styling. The supplied PDF is an exam score report containing private candidate identifiers; do not publish it.
 
