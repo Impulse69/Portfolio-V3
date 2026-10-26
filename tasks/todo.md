@@ -3,7 +3,9 @@
 ## AWS re/Start Graduate badge — October 26, 2026
 - [x] Find AWS email and verify the public badge belongs to Isaac Asamoah.
 - [x] Add official re/Start artwork beside Cloud Practitioner with direct verification and accurate credential metadata.
-- [ ] Build, verify responsive presentation and publish the update.
+- [x] Build, verify responsive presentation and publish the update.
+
+Review: AWS email dated 26 October 2026 identified the re/Start Graduate badge; public Credly page verified Isaac Asamoah, AWS issuer and issue date. Added official artwork and two equal AWS cards, preserving Cloud Practitioner details. Programme completion is labelled accurately, without inventing an expiry. Lint, TypeScript and production build passed. Desktop cards sit alongside each other; mobile stacks without horizontal overflow. Published commit 2023f7d and verified both live images, public verification URL and ten structured credentials. Netlify CLI status lookup timed out; browser confirmed the new production content directly. No LinkedIn changes. Proof: tasks/aws-badges-live.png.
 
 Plan: retain the dark AWS treatment as two equal desktop cards, stacked on mobile. Distinguish programme graduation from exam certification. Publish only the public verification URL; keep the email acceptance link private. No LinkedIn changes.
 
