@@ -1,5 +1,12 @@
 # Founder portfolio rebuild
 
+## AWS re/Start Graduate badge — October 26, 2026
+- [x] Find AWS email and verify the public badge belongs to Isaac Asamoah.
+- [x] Add official re/Start artwork beside Cloud Practitioner with direct verification and accurate credential metadata.
+- [ ] Build, verify responsive presentation and publish the update.
+
+Plan: retain the dark AWS treatment as two equal desktop cards, stacked on mobile. Distinguish programme graduation from exam certification. Publish only the public verification URL; keep the email acceptance link private. No LinkedIn changes.
+
 ## AWS certification feature — October 15, 2026
 - [x] Verify the official badge and supplied PDF; keep private exam identifiers off the public site.
 - [x] Add a prominent AWS certification feature with official artwork and verification.

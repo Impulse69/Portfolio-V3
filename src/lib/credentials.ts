@@ -6,6 +6,13 @@ export const awsCertification = {
   verification: 'https://www.credly.com/badges/109f7ba8-84cb-47c0-9972-58827cd9e535/public_url',
 } as const;
 
+export const awsRestart = {
+  title: 'AWS re/Start Graduate',
+  issuer: 'Amazon Web Services Training and Certification',
+  issued: '2026-10-26',
+  verification: 'https://www.credly.com/badges/155f1155-92c7-431a-9656-2234baac466e/public_url',
+} as const;
+
 export const programmes = [
   {
     slug: 'google-ai',

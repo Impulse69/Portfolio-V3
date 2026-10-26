@@ -1,4 +1,4 @@
-import { awsCertification, programmes, courseCertificates, credentialFile } from './credentials';
+import { awsCertification, awsRestart, programmes, courseCertificates, credentialFile } from './credentials';
 
 export const profile = {
   name: "Isaac Asamoah",
@@ -38,6 +38,13 @@ export const person = {
     dateCreated: awsCertification.issued,
     expires: awsCertification.expires,
     url: awsCertification.verification,
+  }, {
+    '@type': 'EducationalOccupationalCredential',
+    name: awsRestart.title,
+    credentialCategory: 'Programme completion',
+    recognizedBy: { '@type': 'Organization', name: awsRestart.issuer },
+    dateCreated: awsRestart.issued,
+    url: awsRestart.verification,
   }, ...[...programmes, ...courseCertificates].map((credential) => ({
     '@type': 'EducationalOccupationalCredential',
     name: credential.title,
@@ -86,7 +93,7 @@ export const structuredData = {
       inLanguage: "en-GH",
       mainEntity: { "@id": person["@id"] },
       isPartOf: { "@id": siteUrl('/#website') },
-      dateModified: "2026-10-15",
+      dateModified: "2026-10-26",
     },
   ],
 };

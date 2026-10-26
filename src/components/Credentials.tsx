@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { ArrowUpRight, Plus } from 'lucide-react';
-import { awsCertification, programmes, courseCertificates, credentialFile } from '@/lib/credentials';
+import { awsCertification, awsRestart, programmes, courseCertificates, credentialFile } from '@/lib/credentials';
 import styles from './Credentials.module.css';
 
 export default function Credentials() {
@@ -13,6 +13,7 @@ export default function Credentials() {
         </div>
         <p className="section-note">Cloud certification and applied AI learning, alongside the hands-on work. Credentials from Amazon Web Services and Google.</p>
       </div>
+      <div className={styles.awsGrid}>
       <article className={styles.aws} aria-labelledby="aws-title">
         <div className={styles.awsArtwork}>
           <a href={awsCertification.verification} target="_blank" rel="noopener noreferrer" aria-label="View AWS Certified Cloud Practitioner badge on Credly (opens in a new tab)">
@@ -31,6 +32,25 @@ export default function Credentials() {
           <a className={styles.awsVerify} href={awsCertification.verification} target="_blank" rel="noopener noreferrer" aria-label="Verify AWS Certified Cloud Practitioner certification on Credly (opens in a new tab)">Verify on Credly <ArrowUpRight size={18} aria-hidden="true" /></a>
         </div>
       </article>
+      <article className={styles.aws} aria-labelledby="aws-restart-title">
+        <div className={styles.awsArtwork}>
+          <a href={awsRestart.verification} target="_blank" rel="noopener noreferrer" aria-label="View AWS re/Start Graduate badge on Credly (opens in a new tab)">
+            <Image src="/images/credentials/aws-restart-graduate.png" alt="Official AWS re/Start Graduate badge" width={680} height={680} sizes="(max-width: 760px) 240px, 280px" />
+          </a>
+          <span className={styles.awsLevel}>AWS RE/START / PROGRAMME GRADUATE</span>
+        </div>
+        <div className={styles.awsCopy}>
+          <p className={styles.awsEyebrow}>AMAZON WEB SERVICES <span>·</span> GRADUATE</p>
+          <h3 id="aws-restart-title">AWS re/Start<br /><em>Graduate.</em></h3>
+          <p className={styles.awsDescription}>Completed the AWS re/Start programme: cloud skills development through hands-on labs, real-world scenarios and coursework.</p>
+          <dl className={styles.awsDates}>
+            <div><dt>Issued</dt><dd><time dateTime={awsRestart.issued}>26 October 2026</time></dd></div>
+            <div><dt>Credential</dt><dd>Programme completion</dd></div>
+          </dl>
+          <a className={styles.awsVerify} href={awsRestart.verification} target="_blank" rel="noopener noreferrer" aria-label="Verify AWS re/Start Graduate badge on Credly (opens in a new tab)">Verify on Credly <ArrowUpRight size={18} aria-hidden="true" /></a>
+        </div>
+      </article>
+      </div>
       <div className={styles.programmes}>
         {programmes.map((programme) => (
           <article key={programme.slug} className={styles.programme}>
