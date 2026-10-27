@@ -7,7 +7,7 @@ import { ArrowDownRight, ArrowUpRight, Plus, X } from 'lucide-react';
 import { explorations, flagshipProjects, type PortfolioProject } from '@/lib/projects';
 import styles from './WorkGallery.module.css';
 
-const previews: Record<string, { src: string; alt: string; concept?: boolean }> = {
+const previews: Record<string, { src: string; alt: string; concept?: boolean; contain?: boolean }> = {
   odg: {
     src: '/images/work/odg-preview.webp',
     alt: 'Illustrative interface concept for ODG ERP business operations software',
@@ -22,6 +22,9 @@ const previews: Record<string, { src: string; alt: string; concept?: boolean }> 
     src: '/images/work/eastern-preview.webp',
     alt: 'Eastern Premier Hotel website concept with aerial hotel imagery',
   },
+  casa: { src: '/images/work/casa-moderna-preview.webp', alt: 'Casa Moderna live website with its Spaces with soul interior design hero', contain: true },
+  'nonna-website': { src: '/images/work/nonna-website-preview.webp', alt: 'Nonna Lodge live website with its lodge photograph and warm welcome', contain: true },
+  dalimachi: { src: '/images/work/dalimachi-preview.webp', alt: 'D Alimachi live parcel delivery website with booking and tracking links', contain: true },
 };
 
 function ProjectPreview({ project }: { project: PortfolioProject }) {
@@ -38,10 +41,10 @@ function ProjectPreview({ project }: { project: PortfolioProject }) {
         alt={preview.alt}
         fill
         sizes="(max-width: 760px) 100vw, (max-width: 1200px) 30vw, 400px"
-        className={styles.previewImage}
+        className={`${styles.previewImage} ${preview.contain ? styles.containedPreview : ''}`}
         quality={85}
       />
-      {!preview.concept && (
+      {project.id === 'eastern' && (
         <span className={styles.hotelIdentity} aria-hidden="true">
           <span>Eastern Premier</span>
           <small>Website concept</small>

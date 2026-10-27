@@ -11,7 +11,7 @@ export const answers = [
   },
   {
     question: "What projects has Isaac built?",
-    answer: "Selected work includes ODG ERP, connecting inventory, quotations and invoices; Nonna Lodge's hospitality management software for local hotel operations; and an Eastern Premier Hotel website design concept.",
+    answer: "Selected work includes ODG ERP, Nonna Lodge's hospitality management software and public website, the Casa Moderna design studio website, D Alimachi's parcel delivery website powered by Skuldrop, and an Eastern Premier Hotel website design concept.",
   },
   {
     question: "Where is Isaac based?",

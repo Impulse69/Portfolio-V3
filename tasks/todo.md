@@ -1,5 +1,14 @@
 # Founder portfolio rebuild
 
+## Complete selected-work grid — October 27, 2026
+- [x] Verify Casa Moderna, Nonna Lodge public website and D Alimachi; capture authentic previews.
+- [x] Add the three websites as projects 04–06 with accurate descriptions, links and case studies.
+- [ ] Verify six-card desktop/mobile layouts and project routes, then publish and check production.
+
+Plan: keep the existing three flagship projects and complete a second row with Casa Moderna, Nonna Lodge website and D Alimachi. Distinguish the Nonna website from its desktop software. Reuse the existing image-led card design and preserve full website screenshots without clipping.
+
+Verified destinations: Casa Moderna is https://casamodernagroup.com/ (singular group), confirmed by source repository and live site. User-supplied plural domain did not resolve. Nonna Lodge’s public website is https://nonna-lodge-site.vercel.app/, confirmed live and by IJW Labs’ work page; no Nonna site was present among 23 sites returned by the connected Netlify account. D Alimachi is https://dalimachi.com/, with its current public booking/tracking experience powered by Skuldrop. Stack descriptions checked against Casa Moderna README and local Nonna/Skuldrop package manifests.
+
 ## AWS re/Start Graduate badge — October 26, 2026
 - [x] Find AWS email and verify the public badge belongs to Isaac Asamoah.
 - [x] Add official re/Start artwork beside Cloud Practitioner with direct verification and accurate credential metadata.

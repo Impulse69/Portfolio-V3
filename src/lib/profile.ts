@@ -93,7 +93,7 @@ export const structuredData = {
       inLanguage: "en-GH",
       mainEntity: { "@id": person["@id"] },
       isPartOf: { "@id": siteUrl('/#website') },
-      dateModified: "2026-10-26",
+      dateModified: "2026-10-27",
     },
   ],
 };
