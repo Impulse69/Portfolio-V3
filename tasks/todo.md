@@ -3,11 +3,13 @@
 ## Complete selected-work grid — October 27, 2026
 - [x] Verify Casa Moderna, Nonna Lodge public website and D Alimachi; capture authentic previews.
 - [x] Add the three websites as projects 04–06 with accurate descriptions, links and case studies.
-- [ ] Verify six-card desktop/mobile layouts and project routes, then publish and check production.
+- [x] Verify six-card desktop/mobile layouts and project routes, then publish and check production.
 
 Plan: keep the existing three flagship projects and complete a second row with Casa Moderna, Nonna Lodge website and D Alimachi. Distinguish the Nonna website from its desktop software. Reuse the existing image-led card design and preserve full website screenshots without clipping.
 
 Verified destinations: Casa Moderna is https://casamodernagroup.com/ (singular group), confirmed by source repository and live site. User-supplied plural domain did not resolve. Nonna Lodge’s public website is https://nonna-lodge-site.vercel.app/, confirmed live and by IJW Labs’ work page; no Nonna site was present among 23 sites returned by the connected Netlify account. D Alimachi is https://dalimachi.com/, with its current public booking/tracking experience powered by Skuldrop. Stack descriptions checked against Casa Moderna README and local Nonna/Skuldrop package manifests.
+
+Review: Added projects 04–06, three optimized authentic WebP screenshots (195 KB combined), dedicated case-study routes, updated FAQ and sitemap. Removed the duplicate Skuldrop exploration entry. Scoped the Eastern Premier image overlay to its own card so it cannot appear on new projects. Lint, TypeScript and production build passed; all six previews loaded and the new screenshots use contain framing. Desktop is a three-column, two-row grid; narrow mobile stacks without horizontal overflow. Verified Casa modal opening/closing, six sitemap routes and 200 responses for all three new case studies. Published commit 485bb84 as Netlify deploy 6ae0d89063a3f2dbca9ca12f; exact published commit confirmed through Netlify API and new cards/routes verified live. Proof: tasks/project-grid-complete-live.png.
 
 ## AWS re/Start Graduate badge — October 26, 2026
 - [x] Find AWS email and verify the public badge belongs to Isaac Asamoah.
